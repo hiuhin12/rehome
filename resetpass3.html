@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset Successful</title>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fraunces&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+        }
+        body {
+            font-size: 14px;
+            background: url("images/signup.jpg") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            width: 50%;
+            min-height: 40%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px 40px;
+        }
+        .title {
+            font-family: 'Fraunces', serif;
+            font-weight: bold;
+            font-size: 30px;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .title-line {
+            margin: 10px auto;
+            width: 70%;
+            height: 1.5px;
+            background: #75634D;
+        }
+        .success-icon {
+            content: url("images/check.png");
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        button {
+            background-color: #DADDB1;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 30%;
+            text-align: center;
+            font-weight: bold;
+            color: #75634D;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Reset Password</div>
+        <div class="title-line"></div>
+        <div class="success-icon"></div>
+        <div class="message">Password reset successfully</div>
+        <div class="button-container">
+            <button type="button" id="login-button"><span>Login</span></button>
+        </div>
+    </div>
+
+    <script>
+        // Redirect to the login page or other relevant page when the "Login" button is clicked
+        document.getElementById("login-button").addEventListener("click", function () {
+            window.location.href = "login.html"; // Replace with actual login page URL
+        });
+    </script>
+</body>
+</html>

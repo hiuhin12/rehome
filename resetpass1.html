@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fraunces&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+        }
+        body {
+            font-size: 14px;
+            background: url("images/signup.jpg") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            width: 60%;
+            min-height: 40%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px 40px;
+        }
+        .title {
+            font-family: 'Fraunces', serif;
+            font-weight: bold;
+            font-size: 30px;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .title-line {
+            margin: 10px auto;
+            width: 70%;
+            height: 1.5px;
+            background: #75634D;
+        }
+        .subtitle {
+            font-size: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            flex: 1;
+            position: relative;
+        }
+        label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        input[type="email"] {
+            border: none;
+            border-bottom: 1.5px solid #838383;
+            background: transparent;
+            padding: 8px 0;
+            outline: none;
+            width: 100%;
+            color: #333;
+        }
+        input::placeholder {
+            color: #838383;
+        }
+        input:focus {
+            border-bottom-color: #75634D;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        button {
+            background-color: #DADDB1;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 48%;
+            text-align: center;
+            font-weight: bolder;
+            color: #75634D;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Reset Password</div>
+        <div class="title-line"></div>
+        <div class="subtitle">Enter the email you used to create your account so we can send you instructions on how to reset your password.</div>
+        <form class="form" id="resetForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email address">
+            </div>
+            <div class="button-container">
+                <button type="button" id="back-to-login" style="background-color: #FFFFFF">Back to Login</button>
+                <button type="button" id="send-email">Send email</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Store email and navigate to the "Check Your Email" page
+        document.getElementById("send-email").addEventListener("click", function () {
+            const emailInput = document.getElementById("email").value.trim();
+            if (emailInput) {
+                localStorage.setItem("reset-email", emailInput);
+                window.location.href = "checkemail.html";
+            } else {
+                alert("Please enter a valid email.");
+            }
+        });
+
+        // Placeholder event listener for navigation back to login
+        document.getElementById("back-to-login").addEventListener("click", function () {
+            window.location.href = "login.html"; // Replace with actual login page URL
+        });
+    </script>
+</body>
+</html>

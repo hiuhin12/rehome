@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+        }
+        body {
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+        .chat-container {
+            width: 300px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .chat-header {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            padding-right: 10px;
+        }
+        .message {
+            background-color: #e6e6e6;
+            border-radius: 5px;
+            padding: 8px 10px;
+            margin-bottom: 5px;
+            width: fit-content;
+        }
+        .user-message {
+            align-self: flex-end;
+            background-color: #d1e7dd;
+        }
+        .chat-input-container {
+            display: flex;
+            align-items: center;
+        }
+        .chat-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        .send-button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 5px;
+            cursor: pointer;
+            padding: 8px;
+            outline: none;
+        }
+        .send-button:hover {
+            background-color: #5a6268;
+        }
+        .toggle-chat {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 15px;
+            bottom: 15px;
+            background-color: #5a6268;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Chat container -->
+    <div id="chatContainer" class="chat-container">
+        <div class="chat-header">Rehome ChatBot</div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Example conversation messages -->
+            <div class="message">Welcome! I'm your Rehome Assistant.</div>
+            <div class="message">Please Select an option below:</div>
+            <div class="message">Ordering</div>
+            <div class="message">Payment</div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type a new message here">
+            <button class="send-button" id="sendButton">➤</button>
+        </div>
+    </div>
+
+    <!-- Button to open/close chat -->
+    <div id="toggleChat" class="toggle-chat">❓</div>
+
+    <script>
+        // Toggle chat container visibility
+        document.getElementById("toggleChat").addEventListener("click", function () {
+            const chatContainer = document.getElementById("chatContainer");
+            chatContainer.style.display = chatContainer.style.display === "none" || chatContainer.style.display === "" ? "flex" : "none";
+        });
+
+        // Placeholder function to add messages to the chat
+        document.getElementById("sendButton").addEventListener("click", function () {
+            const chatInput = document.getElementById("chatInput");
+            const chatMessages = document.getElementById("chatMessages");
+            const newMessage = chatInput.value.trim();
+            if (newMessage) {
+                const userMessage = document.createElement("div");
+                userMessage.className = "message user-message";
+                userMessage.innerText = newMessage;
+                chatMessages.appendChild(userMessage);
+                chatInput.value = "";
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        });
+    </script>
+
+</body>
+</html>
