@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact Filter Panel with Toggle</title>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+            color: #75634D;
+        }
+        body {
+            background-color: #f9f9f9;
+            padding: 20px;
+            font-size: 10.5px;
+        }
+        .filter-container {
+            width: 310px; 
+            padding: 15px;
+            background-color: #fdfdfd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .filter-title {
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        .filter-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three columns */
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        .filter-group-item {
+            background-color: #f5f0e7;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer; 
+        }
+        .filter-group-item.selected {
+            background-color: #e6e4cf;
+            border: 1px solid #75634D;
+        }
+        .filter-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .filter-button {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 48%;
+            text-align: center;
+            font-weight: bolder;
+            color: #75634D;
+            font-size: 12px;
+        }
+        .filter-button-reset {
+            background-color: #ffffff;
+            border: 1px solid #75634D;
+        }
+        .filter-button-apply {
+            background-color: #DADDB1;
+        }
+        .filter-button-reset:hover, .filter-button-apply:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="filter-container">
+    <div class="filter-title">Filter by price</div>
+    <div class="filter-group">
+        <div class="filter-group-item" data-filter="price1">$0 - $200</div>
+        <div class="filter-group-item" data-filter="price2">$200 - $500</div>
+        <div class="filter-group-item" data-filter="price3">$500 - $800</div>
+        <div class="filter-group-item" data-filter="price4">$800 - $1000</div>
+        <div class="filter-group-item" data-filter="price5">&gt; $1000</div>
+    </div>
+
+    <div class="filter-title">Filter by feedback</div>
+    <div class="filter-group">
+        <div class="filter-group-item" data-filter="feedback1">From 1 star</div>
+        <div class="filter-group-item" data-filter="feedback2">From 2 stars</div>
+        <div class="filter-group-item" data-filter="feedback3">From 3 stars</div>
+        <div class="filter-group-item" data-filter="feedback4">From 4 stars</div>
+        <div class="filter-group-item" data-filter="feedback5">From 5 stars</div>
+    </div>
+
+    <div class="filter-title">Filter by categories</div>
+    <div class="filter-group">
+        <div class="filter-group-item" data-filter="category1">Lightning</div>
+        <div class="filter-group-item" data-filter="category2">Organizer</div>
+        <div class="filter-group-item" data-filter="category3">Fragrances</div>
+        <div class="filter-group-item" data-filter="category4">Decoration</div>
+        <div class="filter-group-item" data-filter="category5">Best Seller</div>
+        <div class="filter-group-item" data-filter="category6">Discount</div>
+    </div>
+
+    <div class="filter-buttons">
+        <button class="filter-button filter-button-reset" id="reset-filters">Reset</button>
+        <button class="filter-button filter-button-apply">Apply</button>
+    </div>
+</div>
+
+<script>
+    // Toggle the "selected" class on each filter group item
+    document.querySelectorAll('.filter-group-item').forEach(item => {
+        item.addEventListener('click', function () {
+            this.classList.toggle('selected');
+        });
+    });
+
+    // Reset button clears all selected items
+    document.getElementById('reset-filters').addEventListener('click', function () {
+        document.querySelectorAll('.filter-group-item').forEach(item => {
+            item.classList.remove('selected');
+        });
+    });
+</script>
+
+</body>
+</html>
