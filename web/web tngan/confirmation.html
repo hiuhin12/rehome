@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+    <link href="./css/confirmation.css" rel="stylesheet" />
+    <title>Confirmation</title>
+</head>
+<body>
+    
+    <div class="v69_1016">
+        <div class="v69_1017">
+            <button class="v69_1018">Back</button>        
+            <button class="v69_1020" onclick="viewOrder()">
+                <span class="v69_1021">View Order</span>
+            </button>
+        </div>        
+        <span class="v69_1022">Thank you</span>
+        <span class="v69_1023">Your order has been confirmed</span>
+        <div class="v69_1024">
+            <div class="v69_1025"></div>
+            <div class="v69_1026"></div>
+            <span class="v69_1027">Order details</span>
+            <span class="v69_1029">Total</span>
+            <span class="v69_1030">$139</span>
+            <span class="v69_1032">Order number:</span>
+            <span class="v69_1033">#R0000001</span>
+            <span class="v69_1035">Credit card</span>
+            <span class="v69_1036">Payment method:</span>
+            <span class="v69_1038">24/04/2/2024</span>
+            <span class="v69_1039">Date:</span>
+        </div>
+        <div class="v75_1163"></div>
+        <div class="v96_690">
+            <span class="v96_691">Shipping</span>
+            <span class="v96_692">Payment</span>
+            <span class="v96_693">Confirmation</span>
+            <div class="v96_694"></div>
+            <div class="v96_695"></div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.v69_1018').addEventListener('click', function() {
+            console.log('Button clicked!');
+        });
+    </script>
+    <script>
+        function viewOrder() {
+            console.log("View Order button clicked!");
+            window.location.href = "tracking.html";
+        }
+    </script>
+</body>
+</html>
