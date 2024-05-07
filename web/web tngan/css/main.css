@@ -4,7 +4,7 @@
 body {
   font-size: 14px;
 }
-.v45_615 {
+.order-container {
   width: 100%;
   height: 980px;
   background: rgba(255,255,255,1);
@@ -14,10 +14,9 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.v87_552 {
+.order-form {
   width: 535px;
   height: 529px;
-  background: url("../images/v87_552.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -27,7 +26,7 @@ body {
   left: 803px;
   overflow: hidden;
 }
-.v87_553 {
+.order-divider {
   width: 535px;
   height: 529px;
   background: rgba(241,235,230,0.25);
@@ -36,10 +35,9 @@ body {
   top: 0px;
   left: 0px;
 }
-.v87_562 {
+.order-total-section {
   width: 454px;
   height: 31px;
-  background: url("../images/v87_562.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -49,7 +47,7 @@ body {
   left: 42px;
   overflow: hidden;
 }
-.v87_563 {
+.order-label {
   width: 57px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -61,7 +59,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_564 {
+.order-value {
   width: 53px;
   color: rgba(216,39,0,1);
   position: absolute;
@@ -73,10 +71,9 @@ body {
   opacity: 1;
   text-align: right;
 }
-.v87_565 {
+.order-shipping-section {
   width: 451px;
   height: 26px;
-  background: url("../images/v87_565.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -86,7 +83,7 @@ body {
   left: 42px;
   overflow: hidden;
 }
-.v87_566 {
+.order-shipping-cost {
   width: 46px;
   color: rgba(218,221,177,1);
   position: absolute;
@@ -98,7 +95,7 @@ body {
   opacity: 1;
   text-align: right;
 }
-.v87_567 {
+.order-shipping-label {
   width: 83px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -110,10 +107,9 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_559 {
+.order-subtotal-section {
   width: 450px;
   height: 26px;
-  background: url("../images/v87_559.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -123,7 +119,7 @@ body {
   left: 42px;
   overflow: hidden;
 }
-.v87_560 {
+.order-subtotal-value {
   width: 43px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -135,7 +131,7 @@ body {
   opacity: 1;
   text-align: right;
 }
-.v87_561 {
+.order-subtotal-label {
   width: 87px;
   color: rgba(117,99,77,1);
   position: relative;
@@ -147,19 +143,17 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_554 {
+.order-divider-line {
   width: 534px;
-  background: url("../images/v87_554.png");
   opacity: 1;
   position: absolute;
   top: 408px;
   left: 0px;
   border: 1px solid rgba(214,199,174,0.75);
 }
-.v87_556 {
+.order-note-section {
   width: 454px;
   height: 80px;
-  background: url("../images/v87_556.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -169,7 +163,7 @@ body {
   left: 42px;
   overflow: hidden;
 }
-.v87_557 {
+.order-note-input {
   width: 454px;
   height: 50px;
   background: rgba(241,235,230,0.75);
@@ -181,24 +175,23 @@ body {
 }
 
 
-.v87_558 {
+.order-note-label {
   width: 46px;
   color: rgba(117, 99, 77, 1);
   position: relative;
   top: 0px;
   left: 0px;
-  font-family: 'DM Sans', sans-serif; /* Thêm kiểu font cho an toàn */
+  font-family: 'DM Sans', sans-serif; 
   font-weight: Medium;
   font-size: 20px;
   opacity: 1;
   text-align: left;
-  outline: none; /* Loại bỏ đường viền focus */
+  outline: none;
 }
 
-.v125_670 {
+.order-discount-section {
   width: 451px;
   height: 86px;
-  background: url("../images/v125_670.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -208,7 +201,7 @@ body {
   left: 42px;
   overflow: hidden;
 }
-.v89_654 {
+.order-apply-btn {
   width: 128px;
   height: 60px;
   background: rgba(241,235,230,0.25);
@@ -219,10 +212,10 @@ body {
   top: 26px;
   left: 323px;
   overflow: hidden;
-  border: none; /* Loại bỏ viền */
+  border: none;
 }
 
-.v89_655 {
+.order-apply-label {
   width: 58px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -234,7 +227,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_583 {
+.order-discount-link {
   width: 281px;
   height: 60px;
   background: rgba(241, 235, 230, 0.75);
@@ -261,7 +254,7 @@ body {
 }
 
 
-.v87_581 {
+.order-discount-label {
   width: 246px;
   color: rgba(117,99,77,1);
   position: relative;
@@ -273,10 +266,9 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_568 {
+.order-total-product-section {
   width: 453px;
   height: 50px;
-  background: url("../images/v87_568.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -286,7 +278,7 @@ body {
   left: 40px;
   overflow: hidden;
 }
-.v87_569 {
+.order-total-product-frame {
   width: 453px;
   height: 50px;
   background: rgba(241,235,230,0.75);
@@ -300,7 +292,7 @@ body {
   border-bottom-right-radius: 5px;
   overflow: hidden;
 }
-.v87_571 {
+.order-total-product-label {
   width: 158px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -312,7 +304,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_572 {
+.order-total-product-price {
   width: 43px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -324,10 +316,9 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_573 {
+.order-product-detail-section {
   width: 409px;
   height: 100px;
-  background: url("../images/v87_573.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -337,7 +328,7 @@ body {
   left: 42px;
   overflow: hidden;
 }
-.v87_575 {
+.order-product-detail-price {
   width: 44px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -349,7 +340,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_579 {
+.order-product-detail-quantity {
   width: 16px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -361,7 +352,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_576 {
+.order-product-detail-color {
   width: 140px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -373,7 +364,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_574 {
+.order-product-detail-name {
   width: 215px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -385,10 +376,10 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_577 {
+.order-product-detail-label {
   width: 100px;
   height: 100px;
-  background: url("../images/v87_577.png");
+  background: url("../images/product.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -398,7 +389,7 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.v87_555 {
+.order-summary-label {
   width: 151px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -410,10 +401,9 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_588 {
+.order-navigation {
   width: 513px;
   height: 31px;
-  background: url("../images/v87_588.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -423,7 +413,7 @@ body {
   left: 463px;
   overflow: hidden;
 }
-.v87_589 {
+.order-nav-item1 {
   width: 99px;
   color: rgba(117,99,77,1);
   position: relative;
@@ -435,7 +425,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_590 {
+.order-nav-item2 {
   width: 98px;
   color: rgba(117,99,77,0.75);
   position: absolute;
@@ -447,7 +437,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_591 {
+.order-nav-item3 {
   width: 145px;
   color: rgba(117,99,77,0.75);
   position: absolute;
@@ -459,10 +449,10 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v87_592 {
+.order-nav-icon1 {
   width: 30px;
   height: 30px;
-  background: url("../images/v87_592.png");
+  background: url("../images/right-arrow.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -472,10 +462,10 @@ body {
   left: 126px;
   overflow: hidden;
 }
-.v87_593 {
+.order-nav-icon1 {
   width: 30px;
   height: 30px;
-  background: url("../images/v87_593.png");
+  background: url("../images/right-arrow.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -485,10 +475,9 @@ body {
   left: 310px;
   overflow: hidden;
 }
-.v125_669 {
+.shipping-details-section {
   width: 646px;
   height: 606px;
-  background: url("../images/v125_669.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -498,7 +487,7 @@ body {
   left: 74px;
   overflow: hidden;
 }
-.v125_663 {
+.shipping-divider-frame {
   width: 645px;
   height: 606px;
   background: rgba(241,235,230,0.25);
@@ -512,10 +501,9 @@ body {
   border-bottom-right-radius: 10px;
   overflow: hidden;
 }
-.v125_657 {
+.shipping-divider-line {
   width: 646px;
   height: 0px;
-  background: url("../images/v125_657.png");
   opacity: 1;
   position: absolute;
   top: 483px;
@@ -523,10 +511,10 @@ body {
   border: 1px solid rgba(214,199,174,0.75);
 }
 
-.v125_659,
-.v125_661 {
-    border: none; /* Loại bỏ đường viền */
-    text-align: center; /* Căn giữa nội dung */
+.cancel-button,
+.payment-button {
+    border: none; 
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -537,10 +525,9 @@ body {
 
 
 
-.v125_658 {
+.shipping-button {
   width: 482px;
   height: 62px;
-  background: url("../images/v125_658.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -550,7 +537,7 @@ body {
   left: 81px;
   overflow: hidden;
 }
-.v125_659 {
+.cancel-button {
   width: 188px;
   height: 62px;
   background: rgba(241,235,230,0.25);
@@ -562,7 +549,7 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.v125_660 {
+.cancel-button-label {
   width: 68px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -574,7 +561,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v125_661 {
+.payment-button {
   width: 206px;
   height: 62px;
   background: rgba(218,221,177,1);
@@ -586,7 +573,7 @@ body {
   left: 276px;
   overflow: hidden;
 }
-.v125_662 {
+.payment-button-label {
   width: 86px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -598,10 +585,9 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v125_648 {
+.shipping-selection-section {
   width: 534px;
   height: 74px;
-  background: url("../images/v125_648.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -611,7 +597,7 @@ body {
   left: 54px;
   overflow: hidden;
 }
-.v125_650 {
+.shipping-selection-frame {
   width: 534px;
   height: 50px;
   background: rgba(214,199,174,0.75);
@@ -625,7 +611,7 @@ body {
   border-bottom-right-radius: 5px;
   overflow: hidden;
 }
-.v125_652 {
+.shipping-selection-value {
   width: 70px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -637,7 +623,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v125_656 {
+.shipping-selection-label {
   width: 141px;
   color: rgba(117,99,77,1);
   position: relative;
@@ -649,10 +635,10 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v125_668 {
+.shipping-selection-option {
   width: 15px;
   height: 15px;
-  background: url("../images/v125_668.png");
+  background: url("../images/dropdown.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -662,10 +648,9 @@ body {
   left: 499px;
   overflow: hidden;
 }
-.v125_641 {
+.shipping-address-section {
   width: 534px;
   height: 71px;
-  background: url("../images/v125_641.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -675,7 +660,7 @@ body {
   left: 54px;
   overflow: hidden;
 }
-.v125_642 {
+.shipping-address-label {
   width: 63px;
   color: rgba(117,99,77,1);
   position: relative;
@@ -687,7 +672,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v125_643 {
+.shipping-address-input {
   width: 534px;
   height: 50px;
   background: rgba(214,199,174,0.75);
@@ -702,22 +687,11 @@ body {
   overflow: hidden;
   border: none;
 }
-.v125_647 {
-  width: 65px;
-  color: rgba(117,99,77,1);
-  position: absolute;
-  top: 38px;
-  left: 20px;
-  font-family: DM Sans;
-  font-weight: Medium;
-  font-size: 16px;
-  opacity: 1;
-  text-align: left;
-}
-.v125_667 {
+
+.shipping-address-validation {
   width: 15px;
   height: 15px;
-  background: url("../images/v125_667.png");
+  background: url("../images/validation.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -727,10 +701,9 @@ body {
   left: 499px;
   overflow: hidden;
 }
-.v125_634 {
+.shipping-phone-section {
   width: 534px;
   height: 71px;
-  background: url("../images/v125_634.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -740,7 +713,7 @@ body {
   left: 54px;
   overflow: hidden;
 }
-.v125_635 {
+.shipping-phone-input {
   width: 534px;
   height: 50px;
   background: rgba(214,199,174,0.75);
@@ -755,7 +728,7 @@ body {
   overflow: hidden;
   border: none;
 }
-.v125_639 {
+.shipping-phone-label {
   width: 113px;
   color: rgba(117,99,77,1);
   position: relative;
@@ -767,22 +740,11 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v125_640 {
-  width: 113px;
-  color: rgba(117,99,77,1);
-  position: absolute;
-  top: 36px;
-  left: 20px;
-  font-family: DM Sans;
-  font-weight: Medium;
-  font-size: 16px;
-  opacity: 1;
-  text-align: left;
-}
-.v125_666 {
+
+.shipping-phone-validation {
   width: 15px;
   height: 15px;
-  background: url("../images/v125_666.png");
+  background: url("../images/validation.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -792,10 +754,9 @@ body {
   left: 499px;
   overflow: hidden;
 }
-.v125_629 {
+.shipping-name-section {
   width: 534px;
   height: 71px;
-  background: url("../images/v125_629.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -805,7 +766,7 @@ body {
   left: 54px;
   overflow: hidden;
 }
-.v125_630 {
+.shipping-name-label {
   width: 75px;
   color: rgba(117,99,77,1);
   position: relative;
@@ -817,7 +778,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v125_631 {
+.shipping-name-input {
   width: 534px;
   height: 50px;
   background: rgba(214,199,174,0.75);
@@ -832,22 +793,11 @@ body {
   overflow: hidden;
   border: none;
 }
-.v125_632 {
-  width: 75px;
-  color: rgba(117,99,77,1);
-  position: absolute;
-  top: 36px;
-  left: 19px;
-  font-family: DM Sans;
-  font-weight: Medium;
-  font-size: 16px;
-  opacity: 1;
-  text-align: left;
-}
-.v125_665 {
+
+.shipping-name-validation {
   width: 15px;
   height: 15px;
-  background: url("../images/v125_665.png");
+  background: url("../images/validation.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -857,10 +807,9 @@ body {
   left: 499px;
   overflow: hidden;
 }
-.v125_622 {
+.shipping-saved-address-section {
   width: 534px;
   height: 50px;
-  background: url("../images/v125_622.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -870,7 +819,7 @@ body {
   left: 54px;
   overflow: hidden;
 }
-.v125_623 {
+.shipping-saved-address-label {
   width: 142px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -882,7 +831,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v125_624 {
+.shipping-saved-address-frame {
   width: 355px;
   height: 50px;
   background: rgba(214,199,174,0.75);
@@ -896,7 +845,7 @@ body {
   border-bottom-right-radius: 5px;
   overflow: hidden;
 }
-.v125_625 {
+.shipping-saved-address-value {
   width: 297px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -908,10 +857,10 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v125_664 {
+.shipping-saved-address-icon {
   width: 15px;
   height: 15px;
-  background: url("../images/v125_664.png");
+  background: url("../images/dropdown.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -921,7 +870,7 @@ body {
   left: 499px;
   overflow: hidden;
 }
-.v125_621 {
+.shipping-details-label {
   width: 151px;
   color: rgba(117,99,77,1);
   position: absolute;
