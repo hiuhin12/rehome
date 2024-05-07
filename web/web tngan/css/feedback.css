@@ -4,8 +4,8 @@
 body {
   font-size: 14px;
 }
-.v83_3049 {
-  width: 100%;
+.feedback-container {
+  width: 1440px;
   height: 1987px;
   background: rgba(255,255,255,1);
   opacity: 1;
@@ -75,20 +75,19 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v100_1111 {
-  width: 100%;
+.feedback-dividers {
+  width: 817px;
   height: 365px;
   background: rgba(241,235,230,0.25);
   opacity: 1;
   position: absolute;
-  top: 242px;
-  left: 203px;
+  top: 238px;
+  left: 311px;
   overflow: hidden;
 }
-.v83_3082 {
-  width: 331px;
-  height: 63px;
-  background: url("../images/v83_3082.png");
+.media-container {
+  width: 250px;
+  height: 50px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -97,212 +96,216 @@ body {
   top: 517px;
   left: 832px;
   overflow: hidden;
+  padding: 0;
+  border: none;
 }
-.v83_3094 {
-  width: 331px;
-  height: 63px;
-  background: rgba(218,221,177,1);
-  padding: 18px 30px;
-  margin: 20px;
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
+
+.add-media {
+  width: 100%;
+  height: 100%;
+  background: rgba(218, 221, 177, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
-.v83_3095 {
-  width: 204px;
-  height: 31px;
-  background: url("../images/v83_3095.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  margin: 10px;
-  opacity: 1;
-  position: absolute;
-  top: 18px;
-  left: 30px;
-  overflow: hidden;
-}
-.v83_3096 {
-  width: 204px;
-  color: rgba(117,99,77,1);
-  position: absolute;
-  top: 0px;
-  left: 0px;
+
+.add-media-text {
+  color: rgba(117, 99, 77, 1);
   font-family: DM Sans;
   font-weight: Regular;
-  font-size: 24px;
-  opacity: 1;
-  text-align: left;
+  font-size: 16px;
+  margin-right: 20px; /* Giảm khoảng cách giữa văn bản và icon */
+  border-right: 1px solid rgba(117, 99, 77, 1); /* Thêm đường gạch bên phải */
+  padding-right: 20px; /* Tạo khoảng cách giữa văn bản và đường gạch */
 }
-.name {
-  color: #fff;
+
+.add-media-icon {
+  width: 30px;
+  height: 25px;
+  background: url("../images/camera.png") center/cover no-repeat;
 }
-.v100_698 {
-  width: 35px;
-  height: 30px;
-  background: url("../images/v100_698.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 18px;
-  left: 274px;
-  overflow: hidden;
-}
-.v83_3090 {
-  width: 886px;
+
+.feedback-section {
+  width: 725px;
   height: 122px;
-  background: url("../images/v83_3090.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 374px;
-  left: 277px;
+  top: 368px;
+  left: 357px;
   overflow: hidden;
 }
-.v83_3092 {
-  width: 886px;
+.feedback-section-divider {
+  width: 725px;
   height: 122px;
   background: rgba(241,235,230,0.25);
   opacity: 1;
   position: absolute;
   top: 0px;
   left: 0px;
-  border: 1px solid rgba(0,0,0,1);
+  border: 1px #75634D solid;
+  border-radius: 5px;
 }
-.v83_3093 {
-  width: 274px;
+.feedback-section-input {
+  width: 702px;
+  height: 76px;
   color: rgba(117,99,77,1);
+  background: none;
   position: absolute;
   top: 23px;
-  left: 13px;
+  left: 11px;
   font-family: DM Sans;
   font-weight: Regular;
   font-size: 24px;
   opacity: 1;
   text-align: left;
+  border: none;
 }
-.v83_3084 {
-  width: 238px;
+input.feedback-section-input:focus{
+  outline: none;
+}
+input.feedback-section-input{
+  font-family: DM Sans;
+  font-size: 20px;
+  color: rgba(117,99,77,1);
+}
+.rating-container {
+  width: 270px;
   height: 30px;
-  background: url("../images/v83_3084.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   margin: 22px;
   opacity: 1;
   position: absolute;
-  top: 291px;
-  left: 886px;
+  top: 285px;
+  left: 789px;
   overflow: hidden;
 }
-.v83_3085 {
+
+
+.rating-star1 {
   width: 30px;
   height: 30px;
-  background: rgba(251,191,36,1);
+  background: url("../images/star.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border: none;
   opacity: 1;
   position: absolute;
   top: 0px;
   left: 0px;
-  border: 2.5px solid rgba(251,191,36,1);
+
 }
-.v83_3086 {
+.rating-star2 {
   width: 30px;
   height: 30px;
-  background: rgba(251,191,36,1);
+  background: url("../images/star.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border: none;
   opacity: 1;
   position: absolute;
   top: 0px;
   left: 52px;
-  border: 2.5px solid rgba(251,191,36,1);
 }
-.v83_3087 {
+.rating-star3 {
   width: 30px;
   height: 30px;
-  background: rgba(251,191,36,1);
+  background: url("../images/star.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border: none;
   opacity: 1;
   position: absolute;
   top: 0px;
   left: 104px;
-  border: 2.5px solid rgba(251,191,36,1);
 }
-.v83_3088 {
+.rating-star4 {
   width: 30px;
   height: 30px;
-  background: rgba(251,191,36,1);
+  background: url("../images/star.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border: none;
   opacity: 1;
   position: absolute;
   top: 0px;
   left: 156px;
-  border: 2.5px solid rgba(251,191,36,1);
 }
-.v83_3089 {
+.rating-star5 {
   width: 30px;
   height: 30px;
-  background: rgba(255,255,255,1);
+  background: url("../images/star.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border: none;
   opacity: 1;
   position: absolute;
   top: 0px;
   left: 208px;
-  border: 2.5px solid rgba(209,213,219,1);
 }
-.v133_671 {
-  width: 767px;
-  height: 74px;
-  background: url("../images/v133_671.png");
+.product-info-section {
+  width: 666px;
+  height: 70px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 267px;
-  left: 303px;
+  top: 271px;
+  left: 361px;
   overflow: hidden;
 }
-.v83_3052 {
-  width: 679px;
+.color-info {
+  width: 352px;
+  height: 26px;
   color: rgba(117,99,77,1);
   position: absolute;
-  top: 33px;
-  left: 88px;
+  top: 37px;
+  left: 85px;
   font-family: DM Sans;
   font-weight: Regular;
-  font-size: 20px;
+  font-size: 16px;
   opacity: 1;
   text-align: left;
 }
-.v83_3051 {
+.product-name {
   width: 581px;
+  height: 26px;
   color: rgba(117,99,77,1);
   position: absolute;
-  top: 0px;
-  left: 88px;
+  top: 9px;
+  left: 85px;
   font-family: DM Sans;
   font-weight: Medium;
   font-size: 20px;
   opacity: 1;
   text-align: left;
 }
-.v83_3053 {
+.product-image {
   width: 70px;
   height: 70px;
-  background: url("../images/v83_3053.png");
+  background: url("../images/product.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 4px;
+  top: 0px;
   left: 0px;
   overflow: hidden;
 }
-.v83_3076 {
-  width: 100%;
+.feedback-instruction-text {
+  width: 1167px; height: 34px;
   color: rgba(117,99,77,1);
   position: absolute;
   top: 204px;
@@ -313,8 +316,9 @@ body {
   opacity: 1;
   text-align: center;
 }
-.v83_3075 {
+.feedback-title {
   width: 323px;
+  height: 34px;
   color: rgba(117,99,77,1);
   position: absolute;
   top: 170px;
@@ -324,4 +328,53 @@ body {
   font-size: 32px;
   opacity: 1;
   text-align: center;
+}
+
+.cancel-button,
+.payment-button {
+    border: none; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.shipping-button {
+  width: 482px;
+  height: 62px;
+  position: absolute;
+  top: 617px;
+  left: 464px;
+  display: flex;
+}
+
+.cancel-button, .payment-button {
+  width: 220px;
+  height: 62px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-button {
+  background-color: rgba(241, 235, 230, 0.8);
+  color: rgba(117, 99, 77, 1);
+}
+
+.payment-button {
+  background-color: rgba(218, 221, 177, 1);
+  color: rgba(117, 99, 77, 1);
+}
+
+.cancel-button:hover, .payment-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.9);
 }
