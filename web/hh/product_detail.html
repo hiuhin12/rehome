@@ -248,6 +248,13 @@
             margin-left: 10px;
         }
         
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
         .quantity-selector {
             display: flex;
             align-items: center;
@@ -280,8 +287,7 @@
             border: none;
             padding: 10px 20px;
             cursor: pointer;
-            width: 100%;
-            margin-top: 20px;
+            width: 60%; 
         }
         
     </style>
@@ -388,13 +394,15 @@
                     <option value="yellow">Yellow</option>
                 </select>
             </div>
-            <div class="quantity-selector">
-                <button class="quantity-btn decrease" onclick="changeQuantity(-1)">-</button>
-                <input type="text" id="quantity-input" value="1" readonly>
-                <button class="quantity-btn increase" onclick="changeQuantity(1)">+</button>
+            <div class="actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn decrease" onclick="changeQuantity(-1)">-</button>
+                    <input type="text" id="quantity-input" value="1" readonly>
+                    <button class="quantity-btn increase" onclick="changeQuantity(1)">+</button>
+                </div>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
             
-            <button class="add-to-cart">Add to Cart</button>
         </div>
     </main>
 
