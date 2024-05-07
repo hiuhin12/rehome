@@ -41,6 +41,10 @@ input.order-note-input {
   top: 187px;
   left: 837px;
   overflow: hidden;
+    border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .order-divider {
@@ -473,7 +477,7 @@ input.order-note-input {
 }
 .shipping-details-section {
   width: 646px;
-  height: 606px;
+  height: 529px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -485,7 +489,7 @@ input.order-note-input {
 }
 .shipping-divider-frame {
   width: 645px;
-  height: 606px;
+  height: 529px;
   background: rgba(241,235,230,0.25);
   opacity: 1;
   position: relative;
@@ -522,8 +526,8 @@ input.order-note-input {
   width: 482px;
   height: 62px;
   position: absolute;
-  top: 513px;
-  left: 81px;
+  top: 434px;
+  left: 82px;
   display: flex;
 }
 
@@ -565,7 +569,7 @@ input.order-note-input {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 368px;
+  top: 327px;
   left: 54px;
   overflow: hidden;
 }
@@ -628,7 +632,7 @@ input.order-note-input {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 286px;
+  top: 252px;
   left: 54px;
   overflow: hidden;
 }
@@ -681,7 +685,7 @@ input.order-note-input {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 204px;
+  top: 178px;
   left: 54px;
   overflow: hidden;
 }
@@ -734,7 +738,7 @@ input.order-note-input {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 122px;
+  top: 103px;
   left: 54px;
   overflow: hidden;
 }
@@ -787,7 +791,7 @@ input.order-note-input {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 61px;
+  top: 53px;
   left: 54px;
   overflow: hidden;
 }
@@ -846,7 +850,7 @@ input.order-note-input {
   width: 151px;
   color: rgba(117,99,77,1);
   position: absolute;
-  top: 24px;
+  top: 18px;
   left: 54px;
   font-family: DM Sans;
   font-weight: Medium;

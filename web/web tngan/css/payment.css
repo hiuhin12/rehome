@@ -4,7 +4,23 @@
 body {
   font-size: 14px;
 }
-.v68_965 {
+input.expiration-date-input:focus,
+input.cvv-input:focus,
+input.card-number-input:focus,
+input.card-holder-input:focus,
+input.note-input:focus {
+  outline: none;
+}
+input.note-input,
+input.expiration-date-input,
+input.cvv-input,
+input.card-number-input,
+input.card-holder-input {
+  font-family: 'DM Sans';
+  font-size: 16px;
+  color: rgba(117,99,77,1);
+}
+.payment-container {
   width: 100%;
   height: 980px;
   background: rgba(255,255,255,1);
@@ -14,32 +30,8 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.v123_1350 {
-  width: 188px;
-  height: 62px;
-  background: rgba(241,235,230,0.25);
-  padding: 18px 60px;
-  margin: 10px;
-  opacity: 1;
-  position: absolute;
-  top: 834px;
-  left: 277px;
-  overflow: hidden;
-  border: none;
-}
-.v123_1351 {
-  width: 68px;
-  color: rgba(117,99,77,1);
-  position: absolute;
-  top: 18px;
-  left: 60px;
-  font-family: DM Sans;
-  font-weight: Bold;
-  font-size: 20px;
-  opacity: 1;
-  text-align: left;
-}
-.v123_1352 {
+
+.confirmation-button {
   width: 214px;
   height: 62px;
   background: rgba(218,221,177,1);
@@ -52,7 +44,7 @@ body {
   overflow: hidden;
   border: none;
 }
-.v123_1353 {
+.confirmation-button-text {
   width: 128px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -64,32 +56,35 @@ body {
   opacity: 1;
   text-align: center;
 }
-.v123_1428 {
+.order-details {
   width: 535px;
   height: 563px;
-  background: url("../images/v123_1428.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 218px;
-  left: 788px;
+  top: 187px;
+  left: 837px;
   overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
-.v123_1395 {
+
+.order-dividers {
   width: 535px;
-  height: 563px;
+  height: 540px;
   background: rgba(241,235,230,0.25);
   opacity: 1;
   position: relative;
   top: 0px;
   left: 0px;
 }
-.v123_1404 {
+.total-section {
   width: 456px;
   height: 47px;
-  background: url("../images/v123_1404.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -99,7 +94,7 @@ body {
   left: 42px;
   overflow: hidden;
 }
-.v123_1405 {
+.total-label {
   width: 85px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -107,11 +102,11 @@ body {
   left: 0px;
   font-family: DM Sans;
   font-weight: Bold;
-  font-size: 36px;
+  font-size: 24px;
   opacity: 1;
   text-align: left;
 }
-.v123_1406 {
+.total-amount {
   width: 79px;
   color: rgba(216,39,0,1);
   position: absolute;
@@ -119,14 +114,13 @@ body {
   left: 377px;
   font-family: DM Sans;
   font-weight: Bold;
-  font-size: 36px;
+  font-size: 24px;
   opacity: 1;
   text-align: right;
 }
-.v123_1427 {
+.discount-info {
   width: 450px;
   height: 26px;
-  background: url("../images/v123_1427.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -136,7 +130,7 @@ body {
   left: 43px;
   overflow: hidden;
 }
-.v68_1015 {
+.discount-label {
   width: 85px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -148,7 +142,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v68_1014 {
+.discount-amount {
   width: 38px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -160,10 +154,9 @@ body {
   opacity: 1;
   text-align: right;
 }
-.v123_1407 {
+.shipping-info {
   width: 451px;
   height: 26px;
-  background: url("../images/v123_1407.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -173,7 +166,7 @@ body {
   left: 42px;
   overflow: hidden;
 }
-.v123_1408 {
+.shipping-label-detail {
   width: 47px;
   color: rgba(218,221,177,1);
   position: absolute;
@@ -185,7 +178,7 @@ body {
   opacity: 1;
   text-align: right;
 }
-.v123_1409 {
+.shipping-label {
   width: 83px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -199,16 +192,17 @@ body {
 }
 
 
-.v123_1383,
-.v123_1366,
-.v123_1372 {
+.payment-options-cod,
+.payment-options-momo,
+.payment-options-atm {
   display: flex; /* Sử dụng flexbox để căn chỉnh các phần tử */
   align-items: center; /* Căn các phần tử theo chiều dọc */
+  position: relative;
 }
 
-.v123_1383 input[type="radio"],
-.v123_1366 input[type="radio"],
-.v123_1372 input[type="radio"] {
+.payment-options-cod input[type="radio"],
+.payment-options-momo input[type="radio"],
+.payment-options-atm input[type="radio"] {
   margin-right: 40px; 
   width: 15px; 
   height: 15px;
@@ -217,16 +211,54 @@ body {
   border-radius: 50%; 
 }
 
-.v123_1383 input[type="radio"]:checked,
-.v123_1366 input[type="radio"]:checked,
-.v123_1372 input[type="radio"]:checked {
+.payment-options-cod input[type="radio"]:checked,
+.payment-options-momo input[type="radio"]:checked,
+.payment-options-atm input[type="radio"]:checked {
   background-color: #75634D; 
 }
+.payment-options-cod {
+  width: 534px;
+  height: 56px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 40px; /* Adjust this value */
+  left: 73px;
+  overflow: hidden;
+}
 
-.v123_1401 {
+.payment-options-momo {
+  width: 534px;
+  height: 56px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 85px; /* Adjust this value */
+  left: 73px;
+  overflow: hidden;
+}
+
+.payment-options-atm {
+  width: 534px;
+  height: 56px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 130px; /* Adjust this value */
+  left: 73px;
+  overflow: hidden;
+}
+
+
+.subtotal-info {
   width: 450px;
   height: 26px;
-  background: url("../images/v123_1401.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -236,7 +268,7 @@ body {
   left: 42px;
   overflow: hidden;
 }
-.v123_1402 {
+.subtotal-amount {
   width: 44px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -248,7 +280,7 @@ body {
   opacity: 1;
   text-align: right;
 }
-.v123_1403 {
+.subtotal-label {
   width: 87px;
   color: rgba(117,99,77,1);
   position: relative;
@@ -260,19 +292,17 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1396 {
+.order-divider-line {
   width: 534px;
-  background: url("../images/v123_1396.png");
   opacity: 1;
   position: absolute;
   top: 408px;
   left: 0px;
   border: 1px solid rgba(214,199,174,0.75);
 }
-.v123_1398 {
+.note-section {
   width: 454px;
   height: 80px;
-  background: url("../images/v123_1398.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -282,7 +312,7 @@ body {
   left: 42px;
   overflow: hidden;
 }
-.v123_1399 {
+.note-input {
   width: 454px;
   height: 50px;
   background: rgba(241,235,230,0.75);
@@ -292,7 +322,7 @@ body {
   left: 0px;
   border: none;
 }
-.v123_1400 {
+.note-label {
   width: 46px;
   color: rgba(117,99,77,1);
   position: relative;
@@ -304,7 +334,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1424 {
+.apply-button {
   width: 128px;
   height: 60px;
   background: rgba(241,235,230,0.25);
@@ -317,7 +347,7 @@ body {
   overflow: hidden;
   border: none;
 }
-.v123_1425 {
+.apply-text {
   width: 58px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -329,61 +359,10 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1426 {
-  width: 281px;
-  height: 60px;
-  background: url("../images/v123_1426.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 249px;
-  left: 42px;
-  overflow: hidden;
-}
-.v123_1423 {
-  width: 281px;
-  height: 60px;
-  background: rgba(241,235,230,0.75);
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  overflow: hidden;
-}
-.v68_1012 {
-  width: 236px;
-  color: rgba(117,99,77,1);
-  position: absolute;
-  top: 12px;
-  left: 15px;
-  font-family: DM Sans;
-  font-weight: Regular;
-  font-size: 24px;
-  opacity: 1;
-  text-align: left;
-}
-.v123_1422 {
-  width: 246px;
-  color: rgba(117,99,77,1);
-  position: absolute;
-  top: 223px;
-  left: 42px;
-  font-family: DM Sans;
-  font-weight: Medium;
-  font-size: 20px;
-  opacity: 1;
-  text-align: left;
-}
-.v123_1410 {
+
+.product-detail-section {
   width: 453px;
   height: 50px;
-  background: url("../images/v123_1410.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -393,7 +372,7 @@ body {
   left: 40px;
   overflow: hidden;
 }
-.v123_1411 {
+.product-detail-divider {
   width: 453px;
   height: 50px;
   background: rgba(241,235,230,0.75);
@@ -407,10 +386,9 @@ body {
   border-bottom-right-radius: 5px;
   overflow: hidden;
 }
-.v123_1412 {
+.product-detail-infor {
   width: 393px;
   height: 24px;
-  background: url("../images/v123_1412.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -420,7 +398,7 @@ body {
   left: 16px;
   overflow: hidden;
 }
-.v123_1413 {
+.product-detail-total {
   width: 158px;
   color: rgba(117,99,77,1);
   position: relative;
@@ -432,7 +410,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1414 {
+.product-detail-amount {
   width: 43px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -444,10 +422,9 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1415 {
+.item-details-section {
   width: 409px;
   height: 100px;
-  background: url("../images/v123_1415.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -457,7 +434,7 @@ body {
   left: 42px;
   overflow: hidden;
 }
-.v123_1416 {
+.item-details-name {
   width: 215px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -469,7 +446,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1417 {
+.item-details-amount {
   width: 44px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -481,7 +458,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1418 {
+.item-details-color {
   width: 140px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -493,10 +470,10 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1419 {
+.item-details-image {
   width: 100px;
   height: 100px;
-  background: url("../images/v123_1419.png");
+  background: url("../images/product.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -506,10 +483,9 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.v123_1420 {
+.item-details-quantity {
   width: 16px;
   height: 26px;
-  background: url("../images/v123_1420.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -519,7 +495,7 @@ body {
   left: 117px;
   overflow: hidden;
 }
-.v123_1421 {
+.quantity-text {
   width: 16px;
   color: rgba(117,99,77,1);
   position: relative;
@@ -531,7 +507,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1397 {
+.order-summary-label {
   width: 151px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -543,22 +519,21 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1346 {
-  width: 653px;
+.payment-method-section {
+  width: 646px;
   height: 563px;
-  background: url("../images/v123_1346.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 218px;
-  left: 66px;
+  top: 187px;
+  left: 80px;
   overflow: hidden;
 }
-.v123_1347 {
-  width: 653px;
-  height: 563px;
+.payment-method-divider {
+  width: 646px;
+  height: 540px;
   background: rgba(241,235,230,0.25);
   opacity: 1;
   position: relative;
@@ -570,23 +545,21 @@ body {
   border-bottom-right-radius: 10px;
   overflow: hidden;
 }
-.v157_830 {
+.card-details {
   width: 533px;
   height: 71px;
-  background: url("../images/v157_830.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 452px;
+  top: 351px;
   left: 55px;
   overflow: hidden;
 }
-.v157_831 {
+.expiration-date-section {
   width: 250px;
   height: 71px;
-  background: url("../images/v157_831.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -596,7 +569,7 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.v157_832 {
+.expiration-date-divider {
   width: 250px;
   height: 50px;
   background: rgba(214,199,174,0.75);
@@ -610,7 +583,7 @@ body {
   border-bottom-right-radius: 5px;
   overflow: hidden;
 }
-.v157_833 {
+.expiration-date-label {
   width: 166px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -622,7 +595,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v157_834 {
+.expiration-date-input {
   width: 79px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -636,10 +609,9 @@ body {
   border: none;
   background-color: transparent;
 }
-.v157_836 {
+.cvv-section {
   width: 250px;
   height: 71px;
-  background: url("../images/v157_836.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -649,7 +621,7 @@ body {
   left: 283px;
   overflow: hidden;
 }
-.v157_837 {
+.cvv-divider {
   width: 250px;
   height: 50px;
   background: rgba(214,199,174,0.75);
@@ -663,7 +635,7 @@ body {
   border-bottom-right-radius: 5px;
   overflow: hidden;
 }
-.v157_838 {
+.cvv-input {
   width: 58px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -677,7 +649,7 @@ body {
   border: none;
   background-color: transparent;
 }
-.v157_839 {
+.cvv-label {
   width: 70px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -689,10 +661,10 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v157_842 {
+.cvv-validation {
   width: 15px;
   height: 15px;
-  background: url("../images/v157_842.png");
+  background: url("../images/validation.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -702,7 +674,7 @@ body {
   left: 217px;
   overflow: hidden;
 }
-.v157_825 {
+.card-number-section {
   width: 534px;
   height: 71px;
   background: url("../images/v157_825.png");
@@ -711,11 +683,11 @@ body {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 375px;
-  left: 56px;
+  top: 275px;
+  left: 55px;
   overflow: hidden;
 }
-.v157_826 {
+.card-number-label {
   width: 133px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -727,7 +699,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v157_827 {
+.card-number-divider {
   width: 534px;
   height: 50px;
   background: rgba(214,199,174,0.75);
@@ -741,7 +713,7 @@ body {
   border-bottom-right-radius: 5px;
   overflow: hidden;
 }
-.v157_828 {
+.card-number-input {
   width: 194px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -755,10 +727,10 @@ body {
   border: none;
   background-color: transparent;
 }
-.v157_841 {
+.card-number-validation {
   width: 15px;
   height: 15px;
-  background: url("../images/v157_841.png");
+  background: url("../images/validation.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -768,20 +740,19 @@ body {
   left: 499px;
   overflow: hidden;
 }
-.v157_820 {
+.card-holder-section {
   width: 534px;
   height: 71px;
-  background: url("../images/v157_820.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 297px;
+  top: 199px;
   left: 55px;
   overflow: hidden;
 }
-.v157_821 {
+.card-holder-label {
   width: 152px;
   color: rgba(117,99,77,1);
   position: relative;
@@ -793,7 +764,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v157_822 {
+.card-holder-divider {
   width: 534px;
   height: 50px;
   background: rgba(214,199,174,0.75);
@@ -807,7 +778,7 @@ body {
   border-bottom-right-radius: 5px;
   overflow: hidden;
 }
-.v157_823 {
+.card-holder-input {
   width: 122px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -821,10 +792,10 @@ body {
   border: none;
   background-color: transparent;
 }
-.v157_824 {
+.card-holder-validation {
   width: 15px;
   height: 15px;
-  background: url("../images/v157_824.png");
+  background: url("../images/validation.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -834,57 +805,18 @@ body {
   left: 499px;
   overflow: hidden;
 }
-.v123_1348 {
+.payment-method-line {
   width: 653px;
-  background: url("../images/v123_1348.png");
+  height: 0;
   opacity: 1;
   position: absolute;
-  top: 281px;
+  top: 192px;
   left: 0px;
   border: 1px solid rgba(214,199,174,0.75);
 }
-.v123_1383 {
-  width: 534px;
-  height: 56px;
-  background: url("../images/v123_1383.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 205px;
-  left: 55px;
-  overflow: hidden;
-}
-.v123_1390 {
-  width: 50px;
-  height: 50px;
-  background: url("../images/v123_1390.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 3px;
-  left: 473px;
-  overflow: hidden;
-}
-.v123_1384 {
-  width: 534px;
-  height: 56px;
-  background: rgba(241,235,230,0.25);
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  border: 1px solid rgba(214,199,174,1);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  overflow: hidden;
-}
-.v123_1385 {
+
+
+.cash-label {
   width: 155px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -899,43 +831,9 @@ body {
   display: inline-block; /* Cho phép phần tử nằm trên cùng một hàng với radio button */
   white-space: nowrap; /* Ngăn chặn chữ từ việc xuống dòng */
 }
-.v123_1393 {
-  width: 20px;
-  height: 20px;
-  background: url("../images/v123_1393.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 18px;
-  left: 22px;
-  overflow: hidden;
-}
-.v123_1366 {
-  width: 534px;
-  height: 56px;
-  background: url("../images/v123_1366.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 137px;
-  left: 55px;
-  overflow: hidden;
-}
-.v123_1367 {
-  width: 534px;
-  height: 56px;
-  background: rgba(241,235,230,0.25);
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  border: 1px solid rgba(214,199,174,1);
-}
-.v123_1368 {
+
+
+.momo-label {
   width: 141px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -950,61 +848,9 @@ body {
   display: inline-block; /* Cho phép phần tử nằm trên cùng một hàng với radio button */
   white-space: nowrap; /* Ngăn chặn chữ từ việc xuống dòng */
 }
-.v123_1369 {
-  width: 40px;
-  height: 40px;
-  background: url("../images/v123_1369.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 8px;
-  left: 478px;
-  overflow: hidden;
-}
-.v123_1392 {
-  width: 20px;
-  height: 20px;
-  background: url("../images/v123_1392.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 18px;
-  left: 22px;
-  overflow: hidden;
-}
-.v123_1372 {
-  width: 534px;
-  height: 56px;
-  background: url("../images/v123_1372.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 69px;
-  left: 55px;
-  overflow: hidden;
-}
-.v123_1373 {
-  width: 534px;
-  height: 56px;
-  background: rgba(241,235,230,0.25);
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  border: 1px solid rgba(214,199,174,1);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  overflow: hidden;
-}
-.v123_1374 {
+
+
+.atm-label {
   width: 268px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -1019,33 +865,8 @@ body {
   display: inline-block; /* Cho phép phần tử nằm trên cùng một hàng với radio button */
   white-space: nowrap; /* Ngăn chặn chữ từ việc xuống dòng */
 }
-.v123_1389 {
-  width: 50px;
-  height: 50px;
-  background: url("../images/v123_1389.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 3px;
-  left: 469px;
-  overflow: hidden;
-}
-.v123_1391 {
-  width: 20px;
-  height: 20px;
-  background: url("../images/v123_1391.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  overflow: hidden;
-}
-.v123_1354 {
+
+.payment-method-label {
   width: 84px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -1057,20 +878,19 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1337 {
+.progress-bar {
   width: 513px;
   height: 31px;
-  background: url("../images/v123_1337.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 145px;
-  left: 503px;
+  top: 130px;
+  left: 463px;
   overflow: hidden;
 }
-.v123_1338 {
+.shipping-step {
   width: 97px;
   color: rgba(117,99,77,0.75);
   position: relative;
@@ -1082,7 +902,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1339 {
+.payment-step {
   width: 101px;
   color: rgba(117,99,77,1);
   position: absolute;
@@ -1094,7 +914,7 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1340 {
+.confirmation-step {
   width: 145px;
   color: rgba(117,99,77,0.75);
   position: absolute;
@@ -1106,10 +926,10 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v123_1341 {
+.progress-bar-icon1 {
   width: 30px;
   height: 30px;
-  background: url("../images/v123_1341.png");
+  background: url("../images/right-arrow.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1119,10 +939,10 @@ body {
   left: 126px;
   overflow: hidden;
 }
-.v123_1342 {
+.progress-bar-icon2 {
   width: 30px;
   height: 30px;
-  background: url("../images/v123_1342.png");
+  background: url("../images/right-arrow.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1131,4 +951,53 @@ body {
   top: 0px;
   left: 310px;
   overflow: hidden;
+}
+
+.cancel-button,
+.payment-button {
+    border: none; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.shipping-button {
+  width: 482px;
+  height: 62px;
+  position: absolute;
+  top: 450px;
+  left: 82px;
+  display: flex;
+}
+
+.cancel-button, .payment-button {
+  width: 220px;
+  height: 62px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-button {
+  background-color: rgba(241, 235, 230, 0.8);
+  color: rgba(117, 99, 77, 1);
+}
+
+.payment-button {
+  background-color: rgba(218, 221, 177, 1);
+  color: rgba(117, 99, 77, 1);
+}
+
+.cancel-button:hover, .payment-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.9);
 }
