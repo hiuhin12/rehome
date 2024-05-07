@@ -121,6 +121,7 @@
             width: 340px; 
             display: none;
             z-index: 1050;
+            margin-top: 30px;
         }
         
         .cart-content {
@@ -139,8 +140,8 @@
         }
         
         .cart-item img {
-            width: 55px;
-            height: auto;
+            width: 65px;
+            height: 65px;
             margin-right: 10px;
         }
         
@@ -151,11 +152,9 @@
         .item-details p, .item-details span {
             margin: 0;
             padding: 2px 0;
+            font-size: 13px;
         }
         
-        .item-details div {
-            font-size: 14px;
-        }
 
         .quantity-selector {
             display: flex;
@@ -177,9 +176,11 @@
         }
         
         .quantity-input {
+            width: 30px;
+            height: 30px;
             text-align: center;
+            border: none;
             margin: 0 5px;
-            width: 40px;
         }
         
         .cart-controls {
@@ -189,7 +190,7 @@
             padding: 10px 0;
         }
         
-        .purchase-btn {
+        #purchase-btn {
             padding: 10px 20px;
             background-color: #75634D;
             color: white;
@@ -310,7 +311,20 @@
                 <div class="cart-content">
                     <h3>Recently Added (3)</h3>
                     <div class="cart-item">
-                        <input type="checkbox" checked>
+                        <input type="checkbox">
+                        <img src="images/ceramic_flower_vase_1.png" alt="Ceramic Flower Vase">
+                        <div class="item-details">
+                            <p>Ceramic Flower Vase</p>
+                            <span style="font-weight: bold;">$100</span>
+                            <div class="quantity-selector">
+                                <button class="quantity-btn decrease" onclick="changeQuantity('decrease', 0)">-</button>
+                                <input type="text" value="1" class="quantity-input">
+                                <button class="quantity-btn increase" onclick="changeQuantity('increase', 0)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item">
+                        <input type="checkbox">
                         <img src="images/ceramic_flower_vase_1.png" alt="Ceramic Flower Vase">
                         <div class="item-details">
                             <p>Ceramic Flower Vase</p>
@@ -323,20 +337,7 @@
                         </div>
                     </div>
                     <div class="cart-item">
-                        <input type="checkbox" checked>
-                        <img src="images/ceramic_flower_vase_1.png" alt="Ceramic Flower Vase">
-                        <div class="item-details">
-                            <p>Ceramic Flower Vase</p>
-                            <span>$100</span>
-                            <div class="quantity-selector">
-                                <button class="quantity-btn decrease" onclick="changeQuantity('decrease', 0)">-</button>
-                                <input type="text" value="1" class="quantity-input">
-                                <button class="quantity-btn increase" onclick="changeQuantity('increase', 0)">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart-item">
-                        <input type="checkbox" checked>
+                        <input type="checkbox">
                         <img src="images/ceramic_flower_vase_1.png" alt="Ceramic Flower Vase">
                         <div class="item-details">
                             <p>Ceramic Flower Vase</p>
@@ -350,8 +351,8 @@
                     </div>
                     
                     <div class="cart-controls">
-                        <button class="purchase-btn">Purchase</button>
-                        <span class="total-amount">$259</span>
+                        <button id="purchase-btn">Purchase</button>
+                        <span class="total-amount">Total amount: $259</span>
                     </div>
                 </div>
             </div>
@@ -411,20 +412,19 @@
                 cartPopup.style.display = 'none';
             }
         });
-        
-    
-        // Function to handle quantity changes
-        window.changeQuantity = function(action, index) {
-            const quantityInput = document.querySelectorAll('.quantity-input')[index];
-            let quantity = parseInt(quantityInput.value);
-            if (action === 'increase') {
-                quantity++;
-            } else if (action === 'decrease' && quantity > 1) {
-                quantity--;
-            }
-            quantityInput.value = quantity;
-        };
     });
+
+    // Function to handle quantity changes
+    window.changeQuantity = function(action, index) {
+        const quantityInput = document.querySelectorAll('.quantity-input')[index];
+        let quantity = parseInt(quantityInput.value);
+        if (action === 'increase') {
+            quantity++;
+        } else if (action === 'decrease' && quantity > 1) {
+            quantity--;
+        }
+        quantityInput.value = quantity;
+    };
 
     document.getElementById('header-cart-icon').addEventListener('mouseover', function() {
         document.getElementById('cart-popup').style.display = 'flex';
