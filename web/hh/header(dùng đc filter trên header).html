@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details</title>
+    <title>Header</title>
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fraunces&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -110,6 +109,63 @@
             margin-left: 50px;
             cursor: pointer;
         }
+        .cart-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1050;
+        }
+        
+        .cart-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 600px;
+            z-index: 2;
+        }
+        
+        .cart-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .cart-item img {
+            width: 55px;
+            height: auto;
+            margin-right: 10px;
+        }
+        
+        .item-details p {
+            margin: 0;
+            font-weight: bold;
+        }
+        
+        .item-details span {
+            color: #75634D;
+        }
+        
+        .item-details div {
+            font-size: 14px;
+        }
+        
+        /* Hide popup initially */
+        .cart-popup {
+            display: none;
+        }
+        
         .filter-container {
             width: 310px;
             padding: 15px;
@@ -176,142 +232,6 @@
         .filter-button-reset:hover, .filter-button-apply:hover {
             opacity: 0.8;
         }
-        .product-details {
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .product-images {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .main-image {
-            width: 60%; /* or any appropriate size */
-            height: auto;
-            border-radius: 10px;
-        }
-        
-        .thumbnail-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-right: 10px; /* Spacing between thumbnails and main image */
-        }
-        
-        .thumbnail {
-            width: 50px; /* Adjust width as needed */
-            cursor: pointer;
-            margin-bottom: 10px; /* Spacing between thumbnails */
-        }
-        
-        .product-info {
-            flex: 1;
-            padding: 0 20px;
-            max-width: 500px;
-        }
-        
-        .product-info h1 {
-            margin-bottom: 10px;
-        }
-        
-        .reviews .stars {
-            color: #75634D;
-        }
-        
-        .reviews span {
-            margin-right: 10px;
-        }
-        
-        .price {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 10px 0;
-            color: #75634D;
-        }
-        
-        .description {
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .color-selection {
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-        }
-        .color-selection label {
-            margin-right: 10px; /* Ensures spacing between label and select box */
-            font-size: 16px; /* Adjust font size as needed */
-            color: #333; /* Adjust text color as needed */
-        }
-        .color-selection select {
-            width: 100px;
-            background-color: #f9f9f9; /* Light background for the select box */
-            border: 1px solid #ccc; /* Subtle border for the box */
-            border-radius: 4px; /* Rounded corners for the select box */
-            font-size: 16px; /* Matching the font size with the label */
-            color: #333; /* Text color */
-            cursor: pointer; /* Changes cursor to pointer to indicate it's clickable */
-        }
-        .color-selection select:hover {
-            background-color: #f0f0f0; 
-        }
-        
-        .color-selection select:focus {
-            border-color: #75634D; /* Highlight color when focused */
-            outline: none; /* Removes the default focus outline */
-        }
-        .actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .quantity-btn {
-            width: 30px;
-            height: 30px;
-            border: none;
-            background-color: #f0e5d8;
-            cursor: pointer;
-            font-size: 18px;
-            color: #333;
-        }
-        .quantity-btn:hover {
-            opacity: 0.8;
-        }
-        #quantity-input {
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            border: none;
-            background-color: #f0e5d8;
-            margin: 0 5px;
-        }
-
-        .add-to-cart {
-            background-color: #DADDB1;
-            color: #75634D;
-            font-weight: bold;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            width: 60%; 
-        }
-        
-        .add-to-cart:hover {
-            opacity: 0.8;
-        }
     </style>
 </head>
 <body>
@@ -348,11 +268,41 @@
 
         <!-- Icons Section -->
         <div class="header-icons">
-            <img src="images/ic_cart.png" alt="Cart Icon">
+            <img src="images/ic_cart.png" alt="Cart Icon" id="header-cart-icon">
+            <div id="cart-popup" class="cart-popup" style="display: none;">
+                <div class="cart-content">
+                    <h3>Recently Added (3)</h3>
+                    <!-- List items in the cart -->
+                    <div class="cart-item">
+                        <img src="images/ceramic_flower_vase_1.png" alt="Product Image">
+                        <div class="item-details">
+                            <p>Ceramic Flower Vase</p>
+                            <span>$100</span>
+                            <div>Quantity: 1</div>
+                        </div>
+                    </div>
+                    <div class="cart-item">
+                        <img src="images/ceramic_flower_vase_1.png" alt="Product Image">
+                        <div class="item-details">
+                            <p>Ceramic Flower Vase</p>
+                            <span>$100</span>
+                            <div>Quantity: 1</div>
+                        </div>
+                    </div>
+                    <div class="cart-item">
+                        <img src="images/ceramic_flower_vase_1.png" alt="Product Image">
+                        <div class="item-details">
+                            <p>Ceramic Flower Vase</p>
+                            <span>$100</span>
+                            <div>Quantity: 1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <img src="images/ic_account.png" alt="Account Icon">
         </div>
     </header>
-
+    
     <!-- Filter Panel -->
     <div class="filter-container" id="filter-panel">
         <div class="filter-title">Filter by price</div>
@@ -389,62 +339,38 @@
         </div>
     </div>
 
-    <main class="product-details">
+<script>
+    document.getElementById('header-cart-icon').addEventListener('mouseover', function() {
+        document.getElementById('cart-popup').style.display = 'flex';
+    });
+    
+    document.getElementById('header-cart-icon').addEventListener('mouseout', function() {
+        document.getElementById('cart-popup').style.display = 'none';
+    });
+    
+    // Toggle the "selected" class on each filter group item
+    document.querySelectorAll('.filter-group-item').forEach(item => {
+        item.addEventListener('click', function () {
+            this.classList.toggle('selected');
+        });
+    });
 
-        <div class="product-images">
-            <div class="thumbnail-container">
-                <img src="images/ceramic_flower_vase_2.png" alt="Thumbnail 1" class="thumbnail">
-                <img src="images/ceramic_flower_vase_3.png" alt="Thumbnail 2" class="thumbnail">
-                <img src="images/ceramic_flower_vase_1.png" alt="Thumbnail 3" class="thumbnail">
-            </div>
-            <img src="images/ceramic_flower_vase_1.png" alt="Ceramic Flower Vase" class="main-image">
-        </div>
+    // Reset button clears all selected items
+    document.getElementById('reset-filters').addEventListener('click', function () {
+        document.querySelectorAll('.filter-group-item').forEach(item => {
+            item.classList.remove('selected');
+        });
+    });
 
-        <div class="product-info">
-            <h1>Ceramic Flower Vase</h1>
-            <div class="reviews">
-                <span class="stars">★★★★☆</span>
-                <span>50 reviews</span>
-            </div>
-            <p class="price">$100</p>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat tincidunt, sapien tortor faucibus augue, a maximus elit ex vitae libero.</p>
-            <div class="color-selection">
-                <label for="color">Colors:</label>
-                <select name="color" id="color">
-                    <option value="white">White</option>
-                    <option value="yellow">Yellow</option>
-                </select>
-            </div>
-            
-            <div class="actions">
-                <div class="quantity-selector">
-                    <button class="quantity-btn decrease" onclick="changeQuantity(-1)">-</button>
-                    <input type="text" id="quantity-input" value="1" readonly>
-                    <button class="quantity-btn increase" onclick="changeQuantity(1)">+</button>
-                </div>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            
-        </div>
-    </main>
+    // Show or hide the filter panel on clicking the filter icon
+    const filterPanel = document.getElementById('filter-panel');
+    const filterIcon = document.getElementById('filter-icon');
 
-    <footer>
-        <p>&copy; 2024 All Rights Reserved</p>
-    </footer>
-    <script>
-        function changeQuantity(change) {
-            var quantityInput = document.getElementById('quantity-input');
-            var currentQuantity = parseInt(quantityInput.value);
-            var newQuantity = currentQuantity + change;
-        
-            // Ensure quantity never goes below 1
-            if (newQuantity < 1) {
-                newQuantity = 1;
-            }
-        
-            quantityInput.value = newQuantity;
-        }
-        </script>
-        
+    filterIcon.addEventListener('click', function () {
+        filterPanel.style.display = filterPanel.style.display === 'none' || !filterPanel.style.display ? 'flex' : 'none';
+    });
+    
+</script>
+
 </body>
 </html>
