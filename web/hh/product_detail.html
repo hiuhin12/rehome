@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fraunces&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+        }
+        body {
+            font-size: 14px;
+            background-color: #f9f9f9;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid #e0e0e0;
+            position: relative;
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+        .header-menu {
+            display: flex;
+            list-style: none;
+            margin-left: 20px;
+        }
+        .header-menu li {
+            margin-right: 50px; 
+            position: relative;
+            font-weight: 600;
+        }
+        .header-menu a {
+            text-decoration: none;
+            color: #75634D;
+            padding-bottom: 5px;
+            position: relative;
+        }
+        .header-menu a:hover::after,
+        .header-menu .active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -3px;
+            height: 2px;
+            background-color: #75634D;
+        }
+        .dropdown {
+            position: absolute;
+            top: 150%;
+            left: 0;
+            background-color: #f8f8f8;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 100;
+            display: none;
+            width: 200px;
+        }
+        .dropdown a {
+            font-weight: 400;
+            text-decoration: none;
+            color: #75634D;
+            padding: 10px 15px;
+            display: block;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .dropdown a:hover {
+            background-color: #f0f0d8;
+        }
+        .header-menu li:hover .dropdown {
+            display: block;
+        }
+        .header-search-container {
+            display: flex;
+            align-items: center;
+            background-color: #f0f0d8;
+            border-radius: 10px;
+            padding: 8px 15px;
+            width: 200px;
+            flex: 0.5;
+        }
+        .header-search-container input[type="text"] {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            padding-left: 8px;
+            width: 100%;
+        }
+        .header-icons {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        .header-icons img {
+            width: 24px;
+            height: 24px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
+        .filter-container {
+            width: 310px;
+            padding: 15px;
+            background-color: #fdfdfd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: absolute;
+            top: 80px;
+            right: 40px;
+            z-index: 100;
+            display: none;
+            color: #75634D;
+        }
+        .filter-title {
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        .filter-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        .filter-group-item {
+            background-color: #f5f0e7;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            font-size: 10px;
+        }
+        .filter-group-item.selected {
+            background-color: #e6e4cf;
+            border: 1px solid #75634D;
+        }
+        .filter-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .filter-button {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 48%;
+            text-align: center;
+            font-weight: bolder;
+            color: #75634D;
+            font-size: 12px;
+        }
+        .filter-button-reset {
+            background-color: #ffffff;
+            border: 1px solid #75634D;
+        }
+        .filter-button-apply {
+            background-color: #DADDB1;
+        }
+        .filter-button-reset:hover, .filter-button-apply:hover {
+            opacity: 0.8;
+        }
+        .product-details {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .product-images {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .main-image {
+            width: 60%; /* or any appropriate size */
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        .thumbnail-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px; /* Spacing between thumbnails and main image */
+        }
+        
+        .thumbnail {
+            width: 50px; /* Adjust width as needed */
+            cursor: pointer;
+            margin-bottom: 10px; /* Spacing between thumbnails */
+        }
+        
+        .product-info {
+            flex: 1;
+            padding: 0 20px;
+            max-width: 500px;
+        }
+        
+        .product-info h1 {
+            margin-bottom: 10px;
+        }
+        
+        .reviews .stars {
+            color: gold;
+        }
+        
+        .reviews span {
+            margin-right: 10px;
+        }
+        
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #75634D;
+        }
+        
+        .description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .color-selection, .quantity {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .color-selection select {
+            margin-left: 10px;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border: none;
+            background-color: #f0e5d8;
+            cursor: pointer;
+            font-size: 18px;
+            color: #333;
+        }
+        
+        #quantity-input {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border: none;
+            background-color: #f0e5d8;
+            margin: 0 5px;
+        }
+        
+        
+        .add-to-cart {
+            background-color: #75634D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <!-- Logo Section -->
+        <div class="header-logo">
+            <img src="images/logo.png" width="50px" alt="Rehome Logo">
+        </div>
+
+        <!-- Navigation Menu -->
+        <ul class="header-menu">
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Products <img src="images/ic_arrow_down.png" width="10px"></a>
+                <div class="dropdown">
+                    <a href="#">Candles & essential oils</a>
+                    <a href="#">Organizer</a>
+                    <a href="#">Textile Fabric</a>
+                    <a href="#">Wall decor</a>
+                    <a href="#">Lighting</a>
+                    <a href="#">ABC</a>
+                </div>
+            </li>
+            <li><a href="#">Our Story</a></li>
+        </ul>
+
+        <!-- Search Bar -->
+        <div class="header-search-container">
+            <img src="images/ic_search.png" width="15px" alt="Search Icon">
+            <input type="text" id="search-bar" placeholder="Search for anything">
+            <img src="images/ic_filter.png" width="17px" id="filter-icon" alt="Filter Icon">
+        </div>
+
+        <!-- Icons Section -->
+        <div class="header-icons">
+            <img src="images/ic_cart.png" alt="Cart Icon">
+            <img src="images/ic_account.png" alt="Account Icon">
+        </div>
+    </header>
+
+    <!-- Filter Panel -->
+    <div class="filter-container" id="filter-panel">
+        <div class="filter-title">Filter by price</div>
+        <div class="filter-group">
+            <div class="filter-group-item" data-filter="price1">$0 - $200</div>
+            <div class="filter-group-item" data-filter="price2">$200 - $500</div>
+            <div class="filter-group-item" data-filter="price3">$500 - $800</div>
+            <div class="filter-group-item" data-filter="price4">$800 - $1000</div>
+            <div class="filter-group-item" data-filter="price5">&gt; $1000</div>
+        </div>
+
+        <div class="filter-title">Filter by feedback</div>
+        <div class="filter-group">
+            <div class="filter-group-item" data-filter="feedback1">From 1 star</div>
+            <div class="filter-group-item" data-filter="feedback2">From 2 stars</div>
+            <div class="filter-group-item" data-filter="feedback3">From 3 stars</div>
+            <div class="filter-group-item" data-filter="feedback4">From 4 stars</div>
+            <div class="filter-group-item" data-filter="feedback5">From 5 stars</div>
+        </div>
+
+        <div class="filter-title">Filter by categories</div>
+        <div class="filter-group">
+            <div class="filter-group-item" data-filter="category1">Lightning</div>
+            <div class="filter-group-item" data-filter="category2">Organizer</div>
+            <div class="filter-group-item" data-filter="category3">Fragrances</div>
+            <div class="filter-group-item" data-filter="category4">Decoration</div>
+            <div class="filter-group-item" data-filter="category5">Best Seller</div>
+            <div class="filter-group-item" data-filter="category6">Discount</div>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-button filter-button-reset" id="reset-filters">Reset</button>
+            <button class="filter-button filter-button-apply">Apply</button>
+        </div>
+    </div>
+
+    <main class="product-details">
+
+        <div class="product-images">
+            <div class="thumbnail-container">
+                <img src="images/ceramic_flower_vase_2.png" alt="Thumbnail 1" class="thumbnail">
+                <img src="images/ceramic_flower_vase_3.png" alt="Thumbnail 2" class="thumbnail">
+                <img src="images/ceramic_flower_vase_1.png" alt="Thumbnail 3" class="thumbnail">
+            </div>
+            <img src="images/ceramic_flower_vase_1.png" alt="Cute Flower Shaped Wall Clock" class="main-image">
+        </div>
+
+        <div class="product-info">
+            <h1>Ceramic Flower Vase</h1>
+            <div class="reviews">
+                <span class="stars">★★★★☆</span>
+                <span>50 reviews</span>
+            </div>
+            <p class="price">$100</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat tincidunt, sapien tortor faucibus augue, a maximus elit ex vitae libero.</p>
+            <div class="color-selection">
+                <label for="color">Colors:</label>
+                <select name="color" id="color">
+                    <option value="white">White</option>
+                    <option value="black">Black</option>
+                    <option value="yellow">Yellow</option>
+                </select>
+            </div>
+            <div class="quantity-selector">
+                <button class="quantity-btn decrease" onclick="changeQuantity(-1)">-</button>
+                <input type="text" id="quantity-input" value="1" readonly>
+                <button class="quantity-btn increase" onclick="changeQuantity(1)">+</button>
+            </div>
+            
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved</p>
+    </footer>
+    <script>
+        function changeQuantity(change) {
+            var quantityInput = document.getElementById('quantity-input');
+            var currentQuantity = parseInt(quantityInput.value);
+            var newQuantity = currentQuantity + change;
+        
+            // Ensure quantity never goes below 1
+            if (newQuantity < 1) {
+                newQuantity = 1;
+            }
+        
+            quantityInput.value = newQuantity;
+        }
+        </script>
+        
+</body>
+</html>
