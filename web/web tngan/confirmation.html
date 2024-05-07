@@ -7,35 +7,33 @@
 </head>
 <body>
     
-    <div class="v69_1016">
-        <div class="v69_1017">
-            <button class="v69_1018">Back</button>        
-            <button class="v69_1020" onclick="viewOrder()">
-                <span class="v69_1021">View Order</span>
-            </button>
-        </div>        
-        <span class="v69_1022">Thank you</span>
-        <span class="v69_1023">Your order has been confirmed</span>
-        <div class="v69_1024">
-            <div class="v69_1025"></div>
-            <div class="v69_1026"></div>
-            <span class="v69_1027">Order details</span>
-            <span class="v69_1029">Total</span>
-            <span class="v69_1030">$139</span>
-            <span class="v69_1032">Order number:</span>
-            <span class="v69_1033">#R0000001</span>
-            <span class="v69_1035">Credit card</span>
-            <span class="v69_1036">Payment method:</span>
-            <span class="v69_1038">24/04/2/2024</span>
-            <span class="v69_1039">Date:</span>
+    <div class="confirmation-container">
+        <div class="shipping-button">
+            <button class="cancel-button"><span class="cancel-button-label">Back</span></button>
+            <button class="payment-button" onclick="viewOrder()"><span class="payment-button-label">View Order</span></button>
+        </div>       
+        <span class="confirmation-message">Thank you</span>
+        <span class="order-confirmation-message">Your order has been confirmed</span>
+        <div class="order-confirm-details">
+            <div class="order-confirm-details-dividers"></div>
+            <div class="order-confirm-details-line"></div>
+            <span class="order-details-title">Order details</span>
+            <span class="order-total">Total</span>
+            <span class="total-amount">$139</span>
+            <span class="order-number-label">Order number:</span>
+            <span class="order-number">#R0000001</span>
+            <span class="payment-method">Credit card</span>
+            <span class="payment-method-label">Payment method:</span>
+            <span class="order-date">24/04/2024</span>
+            <span class="order-date-label">Date:</span>
         </div>
-        <div class="v75_1163"></div>
-        <div class="v96_690">
-            <span class="v96_691">Shipping</span>
-            <span class="v96_692">Payment</span>
-            <span class="v96_693">Confirmation</span>
-            <div class="v96_694"></div>
-            <div class="v96_695"></div>
+        <div class="confirmation-icon"></div>
+        <div class="progress-bar">
+            <span class="shipping-step">Shipping</span>
+            <span class="payment-step">Payment</span>
+            <span class="confirmation-step">Confirmation</span>
+            <div class="progress-bar-icon1"></div>
+            <div class="progress-bar-icon2"></div>
         </div>
     </div>
     <script>
