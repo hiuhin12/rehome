@@ -255,6 +255,56 @@
         .filter-button-reset:hover, .filter-button-apply:hover {
             opacity: 0.8;
         }
+
+
+        .banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 60px;
+            background-image: url('images/signup.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        
+        .banner-content h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .banner-content p {
+            font-size: 1.2em;
+            width: 50%; /* Adjust based on your content */
+        }
+        
+        .btn {
+            background-color: #75634D; /* Adjust color as needed */
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+        
+        .btn:hover {
+            background-color: #5a482c; /* Darker shade for hover effect */
+        }
+        
+        .banner-price-tag {
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        
+        .banner-price-tag span {
+            font-size: 1.5em;
+            color: #333;
+        }
+        
+        
     </style>
 </head>
 <body>
@@ -380,6 +430,22 @@
             <button class="filter-button filter-button-apply">Apply</button>
         </div>
     </div>
+
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Make Home Your Happy Place</h1>
+            <p>Your Home Should Tell The Story Of Who You Are & Be A Collection Of What You Love</p>
+            <button class="btn">Buy Now</button>
+        </div>
+        <div class="banner-price-tag">
+            <span>Rp 170,000,000</span>
+        </div>
+    </section>
+
+
+    
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

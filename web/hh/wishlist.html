@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Wishlist</title>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #f9f9f9;
+            padding-top: 20px;
+        }
+        .container {
+            display: flex;
+            background-color: white;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            flex: 1;
+            border-right: 2px solid #eee;
+            padding: 20px;
+        }
+        .content {
+            flex: 3;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            border-bottom: 1px solid #A9A6A6;
+            cursor: pointer;
+        }
+        .sidebar li:hover, .sidebar li.active {
+            background-color: #DADDB1;
+            font-weight: 600;
+            color: #75634D;
+        }
+        .wishlist-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 20px;
+        }
+        .wishlist-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .product-details, .stock-status, .actions {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+        .stock-status {
+            margin-left: 100px;
+        }
+        .product-details img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .actions button {
+            color: #75634D;
+            font-weight: 600;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-left: 10px; /* Spacing between buttons */
+        }
+        .actions button:hover {
+            opacity: 0.8;
+        }
+        .add-to-cart {
+            background-color: #FFFFFF;
+            border: 1px solid #75634D;
+
+        }
+        .buy-now {
+            background-color: #DADDB1;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li>My Profile</li>
+                <li>My Orders</li>
+                <li class="active">Wishlist</li>
+                <li>Settings</li>
+                <li>Help Center</li>
+                <li>Log Out</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="wishlist-header">
+                <span>Product</span>
+                <span style="margin-right: 60px">Stock Status</span>
+                <span> </span>
+            </div>
+            <div class="wishlist-item">
+                <div class="product-details">
+                    <img src="images/clock.png" alt="Cute flower shaped wall clock">
+                    Cute flower shaped wall clock - $100
+                </div>
+                <div class="stock-status">
+                    In Stock
+                </div>
+                <div class="actions">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button> 
+                </div>
+            </div>
+            <div class="wishlist-item">
+                <div class="product-details">
+                    <img src="images/mushroom.png" alt="Mushroom Table Lamp">
+                    Mushroom Table Lamp - $159
+                </div>
+                <div class="stock-status">
+                    Out of Stock
+                </div>
+                <div class="actions">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="wishlist-item">
+                <div class="product-details">
+                    <img src="images/clock.png" alt="Cute flower shaped wall clock">
+                    Cute flower shaped wall clock - $100
+                </div>
+                <div class="stock-status">
+                    In Stock
+                </div>
+                <div class="actions">
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
