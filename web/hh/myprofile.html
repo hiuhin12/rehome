@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #f9f9f9;
+            padding-top: 20px;
+        }
+        .container {
+            display: flex;
+            background-color: white;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            flex: 1;
+            border-right: 2px solid #eee;
+            padding: 20px;
+        }
+        .content {
+            flex: 3;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-column {
+            width: 48%;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            border-bottom: 1px solid #A9A6A6;
+            cursor: pointer;
+        }
+        .sidebar li:hover, .sidebar li.active {
+            background-color: #DADDB1;
+            font-weight: 600;
+            color: #75634D;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-bottom: 1.5px solid #C2BEBA;
+            background: transparent;
+            outline: none;
+            color: #333;
+        }
+        input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder, input[type="date"]::placeholder {
+            color: #838383;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="date"]:focus {
+            border-bottom-color: #75634D;
+        }
+        .gender-radios {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .gender-radios label {
+            font-size: 14px;
+            font-weight: 400;
+        }
+        input[type="submit"] {
+            background-color: #DADDB1;
+            color: #75634D;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-left: 90px;
+        }
+        input[type="submit"]:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li class="active">My Profile</li>
+                <li>My Orders</li>
+                <li>Wishlist</li>
+                <li>Settings</li>
+                <li>Help Center</li>
+                <li>Log Out</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="form-column">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label style="margin-bottom: 11px;">Gender</label>
+                        <div class="gender-radios">
+                            <label><input type="radio" name="gender" value="male" checked> Male</label>
+                            <label><input type="radio" name="gender" value="female"> Female</label>
+                            <label><input type="radio" name="gender" value="other"> Others</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">DOB</label>
+                        <input type="date" id="dob" placeholder="Enter your DOB">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone number</label>
+                        <input type="text" id="phone" placeholder="Enter your phone number">
+                    </div>
+                </form>
+            </div>
+            <div class="form-column">
+                <form>
+                    <div class="form-group">
+                        <label for="current-password">Current password</label>
+                        <input type="password" id="current-password" placeholder="Enter your current password">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">New password</label>
+                        <input type="password" id="new-password" placeholder="Enter your new password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm new password</label>
+                        <input type="password" id="confirm-password" placeholder="Confirm your new password">
+                    </div>
+                    <input type="submit" value="Save Changes">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
