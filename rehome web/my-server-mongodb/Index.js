@@ -25,6 +25,7 @@ client = new MongoClient("mongodb://127.0.0.1:27017");
 client.connect();
 database = client.db("rehome"); 
 productCollection = database.collection("Product");
+productOptionCollection = database.collection("Product Option");
 
 app.get("/product",cors(),async (req,res)=>{ 
     const result = await productCollection.find({}).toArray();
