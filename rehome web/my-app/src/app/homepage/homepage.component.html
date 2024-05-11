@@ -1,2 +1,108 @@
-<p>homepage works!</p>
-<a routerLink="product">product</a> |
+<!-- Header -->
+<header class="header">
+    <!-- Logo Section -->
+    <div class="header-logo">
+        <img src="/assets/images/logo.png" width="50px" alt="Rehome Logo">
+    </div>
+
+    <!-- Navigation Menu -->
+    <ul class="header-menu">
+        <li><a href="#">Home</a></li>
+        <li>
+            <a href="#">Products <img src="/assets/images/ic_arrow_down.png" width="10px"></a>
+            <div class="dropdown">
+                <a href="#">Candles & essential oils</a>
+                <a href="#">Organizer</a>
+                <a href="#">Textile Fabric</a>
+                <a href="#">Wall decor</a>
+                <a href="#">Lighting</a>
+                <a href="#">ABC</a>
+            </div>
+        </li>
+        <li><a href="#">Our Story</a></li>
+    </ul>
+
+    <!-- Search Bar -->
+    <div class="header-search-container">
+        <img src="/assets/images/ic_search.png" width="15px" alt="Search Icon">
+        <input type="text" id="search-bar" placeholder="Search for anything">
+        <img src="/assets/images/ic_filter.png" width="17px" id="filter-icon" alt="Filter Icon" (click)="toggleFilterPopup()">
+    </div>
+
+    <!-- Icons Section -->
+    <div class="header-icons">
+        <img src="/assets/images/ic_cart.png" alt="Cart Icon" id="cart-icon" (click)="toggleCartPopup()">
+        <div class="cart-popup" *ngIf="showCart">
+            <div class="cart-content">
+                <h3>Recently Added ({{cartItems.length}})</h3>
+                <div *ngFor="let item of cartItems; let i = index" class="cart-item">
+                    <input type="checkbox">
+                    <img [src]="item.img" alt="Product Image">
+                    <div class="item-details">
+                        <p>{{item.name}}</p>
+                        <span>${{item.price}}</span>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" (click)="changeQuantity('decrease', i)">-</button>
+                            <input type="text" [(ngModel)]="item.quantity" class="quantity-input">
+                            <button class="quantity-btn" (click)="changeQuantity('increase', i)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-controls">
+                    <button id="purchase-btn">Purchase</button>
+                    <span class="total-amount">Total amount: ${{totalAmount}}</span>
+                </div>
+            </div>
+        </div>
+        <img src="/assets/images/ic_account.png" alt="Account Icon">
+    </div>    
+</header>
+
+<!-- Filter Panel -->
+<div class="filter-container" id="filter-panel" *ngIf="showFilter">
+    <div class="filter-title">Filter by price</div>
+    <div class="filter-group">
+        <div class="filter-group-item" data-filter="price1" (click)="toggleFilterItem($event)">$0 - $200</div>
+        <div class="filter-group-item" data-filter="price2" (click)="toggleFilterItem($event)">$200 - $500</div>
+        <div class="filter-group-item" data-filter="price3" (click)="toggleFilterItem($event)">$500 - $800</div>
+        <div class="filter-group-item" data-filter="price4" (click)="toggleFilterItem($event)">$800 - $1000</div>
+        <div class="filter-group-item" data-filter="price5" (click)="toggleFilterItem($event)">&gt; $1000</div>
+    </div>
+
+    <div class="filter-title">Filter by feedback</div>
+    <div class="filter-group">
+        <div class="filter-group-item" data-filter="feedback1" (click)="toggleFilterItem($event)">From 1 star</div>
+        <div class="filter-group-item" data-filter="feedback2" (click)="toggleFilterItem($event)">From 2 stars</div>
+        <div class="filter-group-item" data-filter="feedback3" (click)="toggleFilterItem($event)">From 3 stars</div>
+        <div class="filter-group-item" data-filter="feedback4" (click)="toggleFilterItem($event)">From 4 stars</div>
+        <div class="filter-group-item" data-filter="feedback5" (click)="toggleFilterItem($event)">From 5 stars</div>
+    </div>
+
+    <div class="filter-title">Filter by categories</div>
+    <div class="filter-group">
+        <div class="filter-group-item" data-filter="category1" (click)="toggleFilterItem($event)">Lightning</div>
+        <div class="filter-group-item" data-filter="category2" (click)="toggleFilterItem($event)">Organizer</div>
+        <div class="filter-group-item" data-filter="category3" (click)="toggleFilterItem($event)">Fragrances</div>
+        <div class="filter-group-item" data-filter="category4" (click)="toggleFilterItem($event)">Decoration</div>
+        <div class="filter-group-item" data-filter="category5" (click)="toggleFilterItem($event)">Best Seller</div>
+        <div class="filter-group-item" data-filter="category6" (click)="toggleFilterItem($event)">Discount</div>
+    </div>
+
+    <div class="filter-buttons">
+        <button class="filter-button filter-button-reset" id="reset-filters" (click)="resetFilters()">Reset</button>
+        <button class="filter-button filter-button-apply">Apply</button>
+      </div>
+</div>
+
+
+<!-- Banner Section -->
+<section class="banner">
+    <div class="banner-content">
+        <h1>Make Home Your Happy Place</h1>
+        <p>Your Home Should Tell The Story Of Who You Are & Be A Collection Of What You Love</p>
+        <button class="btn">Buy Now</button>
+    </div>
+    <div class="banner-price-tag">
+        <span>Rp 170,000,000</span>
+    </div>
+</section>
