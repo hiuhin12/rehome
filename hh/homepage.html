@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fraunces&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         * {
             box-sizing: border-box;
@@ -255,8 +257,6 @@
         .filter-button-reset:hover, .filter-button-apply:hover {
             opacity: 0.8;
         }
-
-
         .banner {
             display: flex;
             justify-content: space-between;
@@ -280,17 +280,18 @@
         }
         
         .btn {
-            background-color: #75634D; /* Adjust color as needed */
+            background-color: #DADDB1; 
             border: none;
             padding: 10px 20px;
-            color: white;
+            color: #75634D;
+            font-weight: bold;
             cursor: pointer;
             font-size: 1em;
             border-radius: 5px;
         }
         
         .btn:hover {
-            background-color: #5a482c; /* Darker shade for hover effect */
+            opacity: 0.8; 
         }
         
         .banner-price-tag {
@@ -304,6 +305,364 @@
             color: #333;
         }
         
+        .category-section {
+            padding: 20px;
+            text-align: center;
+            background: #F1EBE6; 
+            border: 1px solid #2E2E2E;
+            
+        }
+        .category-title-section {
+            font-family: 'Fraunces';
+            font-weight: bold;
+            color: #75634D;
+            font-size: 18px;
+            margin-top: -10px;
+        }
+        .category {
+            display: inline-block;
+            text-align: center;
+            margin: 10px 30px;
+        }
+        .category img {
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%; 
+            margin: 0 auto;
+            display: block;
+        }
+        .category img:hover {
+            transform: scale(1.1);
+        }
+        .category-title {
+            font-size: 16px;
+            color: #75634D;
+            margin-top: 10px;  
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+        }
+        .feature, .product {
+            text-align: center;
+            margin: 0 15px;
+        }
+        .feature img, .product img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .feature-title {
+            margin-top: 5px;
+            font-size: 16px;
+            color: #75634D;
+            font-weight: bold;
+        }
+        .feature-description, .product-price {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .new-arrivals-header h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #75634D;
+            font-family: 'Fraunces';
+            font-weight: bold;
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .new-arrivals-header h2::after,
+        .new-arrivals-header h2::before {
+            content: "";
+            display: block;
+            width: 50%; 
+            height: 2px;
+            background-color: #DADDB1;
+            position: absolute;
+            top: 50%;  
+            transform: translateY(-50%);
+        }
+        
+        .new-arrivals-header h2::before {
+            left: 0;
+            right: auto;
+            margin-left: -100px;  
+        }
+        
+        .new-arrivals-header h2::after {
+            right: 0;
+            left: auto;
+            margin-right: -100px;  
+        }
+        
+        .categories-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: -10px;
+            margin-top: -18px;
+        }        
+        .category-link {
+            margin: 0 15px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+            position: relative;
+        }
+        .category-link::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #DADDB1;
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }     
+        .category-link.active::after {
+            width: 100%;
+        }       
+        .category-link:hover::after {
+            width: 100%;
+        }     
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0;
+        }       
+        .product {
+            width: 24%;
+            margin: 10px 0.5%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        
+        .product img {
+            width: 160px; 
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        .product-title {
+            font-size: 15px;
+            color: #333;
+        }
+        
+        .product-price {
+            font-size: 14px;
+            color: #999;
+        }
+        
+        .view-all-button {
+            text-align: center;
+            margin-top: -20px;
+        }
+        
+        .view-all-button button {
+            background-color: #DADDB1;
+            color: #75634D;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'DM Sans';
+            font-weight: bold;
+        }
+        .view-all-button button:hover {
+            opacity: 0.8;
+        }
+
+        .best-products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 150px); /* Fixed height for all rows */
+            gap: 10px;
+            max-width: 1024px;
+            margin: 20px auto; /* Adjusted for compact spacing */
+        }
+        .best-product {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px; /* Slightly reduced border radius */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f3f3f3;
+        }
+        .best-products-header h2 {
+            font-size: 24px;
+            color: #75634D;
+            font-family: 'Fraunces';
+            font-weight: bold;
+            position: relative;
+            padding: 20px 0;
+            margin-left: 30px;
+        }
+        .best-products-header h2::after {
+            content: "";
+            display: block;
+            width: 70%; 
+            height: 2px;
+            background-color: #DADDB1;
+            position: absolute;
+            top: 50%;  
+            transform: translateY(-50%);
+            margin-left: 300px;
+        }
+        .best-product img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .best-product img:hover {
+            transform: scale(1.1);
+        }
+        .product-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 5px 0; /* Reduced padding */
+            font-family: 'Fraunces', serif;
+            font-size: 0.9em; /* Reduced font size for compact design */
+        }
+        /* Adjusting for responsiveness */
+        @media (max-width: 768px) {
+            .best-products {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 150px); /* Adjusted to stack vertically on smaller screens */
+            }
+            .best-product {
+                grid-column: 1 / 2;
+            }
+            .large-product, .medium-product1, .medium-product2, .medium-product3 {
+                grid-row: auto;
+            }
+        }       
+        .decoration-shop-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            align-items: center;
+            margin-left: 30px;
+            background-color:#F1EBE6;
+        }
+        .text-section {
+            width: 50%;
+        }
+        .text-section h2 {
+            font-family: 'Fraunces';
+            font-size: 26px;
+            font-weight: bold;
+            color: #75634D;
+        }
+        .text-section p {
+            font-size: 15px;
+        }
+        .text-section button {
+            background-color: #DADDB1;
+            color: #75634D;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'DM Sans';
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        .text-section button:hover {
+            opacity: 0.8;
+        }
+        .square-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 100%;
+        }
+        .square-images img {
+            width: 100%; 
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .big-image {
+            width: 90%;
+            border-radius: 10px;
+            margin-right: -200px;
+        }
+        /* Footer */
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        footer {
+            background-color: #75634D;
+            color: #fff; 
+            font-family: 'DM Sans', sans-serif;
+            padding: 20px 0; 
+            font-size: 13px;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        .footer-section {
+            margin: 0 20px; 
+        }
+        .footer-logo {
+            width: 50px; 
+            margin-bottom: 10px;
+        }
+        .team-rehome {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            
+        }
+        .social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 200px;
+        }
+        .social-icon {
+            color: #fff; 
+            margin-right: 20px; 
+            text-decoration: none; 
+            font-size: 17px; 
+        }
+        .social-icons a i {
+            color:#fff;
+        }
+        .footer-section h4 {
+            margin-top: 0; 
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0; 
+            margin: 0; 
+        }
+        .footer-section ul li a {
+            color: #fff; 
+            margin-bottom: 5px; 
+            display: block; 
+        }
+        .footer-section address {
+            font-style: normal; 
+            margin-top: 10px; 
+        }
         
     </style>
 </head>
@@ -444,7 +803,203 @@
         </div>
     </section>
 
+    <div class="section features">
+        <div class="feature">
+            <img src="images/highquality.png" alt="High Quality">
+            <div class="feature-title">High Quality</div>
+            <div class="feature-description">The best quality of home decor products.</div>
+        </div>
+        <div class="feature">
+            <img src="images/chatbot.png" alt="AI Chatbot">
+            <div class="feature-title">AI Chatbot</div>
+            <div class="feature-description">24/7 customer support with AI.</div>
+        </div>
+        <div class="feature">
+            <img src="images/delivery.png" alt="Fast Delivering">
+            <div class="feature-title">Fast Delivering</div>
+            <div class="feature-description">Quick and reliable delivery service.</div>
+        </div>
+    </div>
+    <div class="category-section">
+        <div class="category-title-section">
+            <h2>Featured Categories</h2>
+        </div>
+        <div class="category">
+            <img src="images/ceramic_flower_vase_1.png" alt="Textile Fabric">
+            <div class="category-title">Textile Fabric</div>
+        </div>
+        <div class="category">
+            <img src="images/ceramic_flower_vase_1.png" alt="Wall Decor">
+            <div class="category-title">Wall Decor</div>
+        </div>
+        <div class="category">
+            <img src="images/ceramic_flower_vase_1.png" alt="Organizer">
+            <div class="category-title">Organizer</div>
+        </div>
+        <div class="category">
+            <img src="images/ceramic_flower_vase_1.png" alt="Category 4">
+            <div class="category-title">Category 4</div>
+        </div>
+        <div class="category">
+            <img src="images/ceramic_flower_vase_1.png" alt="Category 5">
+            <div class="category-title">Category 5</div>
+        </div>
+        <div class="category">
+            <img src="images/ceramic_flower_vase_1.png" alt="Category 6">
+            <div class="category-title">Category 6</div>
+        </div>
+    </div>
+    <div class="section new-arrivals">
+        <div class="new-arrivals-header">
+        <h2>New Arrivals</h2>
+        <div class="categories-nav">
+            <span class="category-link active">All</span>
+            <span class="category-link">Lighting</span>
+            <span class="category-link">Textile Fabric</span>
+        </div>
+        <div class="products-container">
+            <div class="product">
+                <img src="images/mushroom.png" alt="Mushroom Table Lamp">
+                <div class="product-title">Mushroom Table Lamp</div>
+                <div class="product-price">300,000 VND</div>
+            </div>
+            <div class="product">
+                <img src="images/mushroom.png" alt="Mushroom Table Lamp">
+                <div class="product-title">Mushroom Table Lamp</div>
+                <div class="product-price">300,000 VND</div>
+            </div>
+            <div class="product">
+                <img src="images/mushroom.png" alt="Mushroom Table Lamp">
+                <div class="product-title">Mushroom Table Lamp</div>
+                <div class="product-price">300,000 VND</div>
+            </div>
+            <div class="product">
+                <img src="images/mushroom.png" alt="Mushroom Table Lamp">
+                <div class="product-title">Mushroom Table Lamp</div>
+                <div class="product-price">300,000 VND</div>
+            </div>
+            <div class="product">
+                <img src="images/mushroom.png" alt="Mushroom Table Lamp">
+                <div class="product-title">Mushroom Table Lamp</div>
+                <div class="product-price">300,000 VND</div>
+            </div>
+            <div class="product">
+                <img src="images/mushroom.png" alt="Mushroom Table Lamp">
+                <div class="product-title">Mushroom Table Lamp</div>
+                <div class="product-price">300,000 VND</div>
+            </div>
+            <div class="product">
+                <img src="images/mushroom.png" alt="Mushroom Table Lamp">
+                <div class="product-title">Mushroom Table Lamp</div>
+                <div class="product-price">300,000 VND</div>
+            </div>
+            <div class="product">
+                <img src="images/mushroom.png" alt="Mushroom Table Lamp">
+                <div class="product-title">Mushroom Table Lamp</div>
+                <div class="product-price">300,000 VND</div>
+            </div>
+        </div>
+        </div>
+        <div class="view-all-button">
+            <button>View all</button>
+        </div>
+    </div>
 
+    <div class="best-products-header">
+        <h2>Shop our best products</h2>
+    </div>
+    <div class="best-products">
+        <div class="best-product large-product">
+            <img src="images/mushroom.png" alt="Feature Image">
+            <div class="product-info">Category A<br>Over 200 products are sold!</div>
+        </div>
+        <div class="best-product medium-product1">
+            <img src="images/mushroom.png" alt="Product Image">
+            <div class="product-info">Category A<br>Over 200 products are sold!</div>
+        </div>
+        <div class="best-product medium-product2">
+            <img src="images/mushroom.png" alt="Product Image">
+            <div class="product-info">Category A<br>Over 200 products are sold!</div>
+        </div>
+        <div class="best-product medium-product3">
+            <img src="images/mushroom.png" alt="Product Image">
+            <div class="product-info">Category A<br>Over 200 products are sold!</div>
+        </div>
+        <div class="best-product medium-product2">
+            <img src="images/mushroom.png" alt="Product Image">
+            <div class="product-info">Category A<br>Over 200 products are sold!</div>
+        </div>
+        <div class="best-product medium-product3">
+            <img src="images/mushroom.png" alt="Product Image">
+            <div class="product-info">Category A<br>Over 200 products are sold!</div>
+        </div>
+    </div>
+
+    <div class="decoration-shop-section">
+        <div class="text-section">
+            <h2>More than just a decoration shop</h2>
+            <p>At Rehome, we believe that your space deserves more than just aesthetics; it needs a soul.
+            Our meticulously curated collection of decor items is designed to transform your house
+            into a home that reflects your personality and style.</p>
+            <button>Our story</button>
+            <div class="square-images">
+                <img src="images/unique.png" alt="Placeholder">
+                <img src="images/ontime.png" alt="Placeholder">
+                <img src="images/5star.png" alt="Placeholder">
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="images/decoration.jpg" alt="Feature Image" class="big-image">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                  <img src="images/logo_white.png" alt="HKT Team Logo" class="footer-logo">
+                  <div class="team-rehome">
+                      <img src="images/footer.jpg" style="width:150px;">
+                      <div class="team-text">
+                      <p>WE MAKE YOUR DREAM HOME COME TRUE</p>
+                      <div class="social-icons">
+                          <a href="https://www.facebook.com/khoahttt.uel" target="_blank" class="social-icon">
+                              <i class="fab fa-facebook-f"></i>
+                          </a>
+                          <a href="https://www.linkedin.com/in/hiuhin/" target="_blank" class="social-icon">
+                              <i class="fab fa-linkedin-in"></i>
+                          </a>
+                          <a href="https://www.instagram.com/hiu._.hinnn/" target="_blank" class="social-icon">
+                              <i class="fab fa-instagram"></i>
+                          </a>
+                      </div>
+                      </div>
+                  </div>
+            </div>
+            <div class="footer-section" style="width:200px;">
+                <h4>Site Map</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">All Products</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Terms & Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section" style="width:200px;">
+                <h4>Account</h4>
+                <ul>
+                    <li><a href="myprofile.html">My Profile</a></li>
+                    <li><a href="cart.html">My Cart</a></li>
+                    <li><a href="setting.html">Settings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><a href="tel:+84918702938">+84 918 702 938</a></p>
+                <p><a href="mailto:rehome.decor@gmail.com">rehome.decor@gmail.com</a></p>
+                <address>No 669, Highway 1, Quarter 3, Linh Xuan Ward, Thu Duc City, Ho Chi Minh City, Vietnam</address>
+            </div>
+        </div>
+    </footer>
     
 
 <script>

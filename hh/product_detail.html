@@ -312,6 +312,168 @@
         .add-to-cart:hover {
             opacity: 0.8;
         }
+
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #75634D;
+        }
+
+        .tab.active {
+            border-bottom: 2px solid #75634D;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .review-list {
+            margin-top: 20px;
+        }
+
+        .review-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 10px 0;
+        }
+
+        .review-item:last-child {
+            border-bottom: none;
+        }
+
+        .review-author {
+            font-weight: bold;
+        }
+
+        .review-date {
+            color: #888;
+            font-size: 12px;
+        }
+
+        .review-text {
+            margin-top: 5px;
+        }
+
+        .review-images {
+            margin-top: 10px;
+            display: flex;
+        }
+
+        .review-images img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .pagination a {
+            margin: 0 5px;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #75634D;
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+        }
+
+        .pagination a.active {
+            background-color: #DADDB1;
+            border-color: #DADDB1;
+            color: #fff;
+        }
+
+        .pagination a:hover {
+            background-color: #e0e0e0;
+        }
+
+        .filter-reviews {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f5f0e7;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-reviews .stars {
+            color: #75634D;
+            display: flex;
+            align-items: center;
+        }
+
+        .filter-reviews .stars span {
+            margin-right: 5px;
+        }
+
+        .filter-reviews button {
+
+            border: 1px solid #75634D;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #75634D;
+            margin: 0 5px;
+        }
+
+        .filter-reviews button:hover {
+            background-color: #DADDB1;
+        }
+
+
+        .similar-items {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .similar-item {
+            width: 150px;
+            padding: 10px;
+            background-color: #fff;
+            margin: 0 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .similar-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .similar-item p {
+            margin: 10px 0 0;
+            color: #75634D;
+            font-weight: bold;
+        }
+
+        .similar-item span {
+            display: block;
+            color: #888;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -428,6 +590,95 @@
         </div>
     </main>
 
+    <!-- Description and Reviews Sections -->
+    <div class="tab-container">
+        <div class="tab active" onclick="showTab('description')">Description</div>
+        <div class="tab" onclick="showTab('reviews')">Reviews (50)</div>
+    </div>
+    
+    <div id="description" class="tab-content active">
+        <h2>Product Description</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis. Nunc sed porta augue. Morbi porta tempor odio, in molestie diam bibendum sed.</p>
+        <h2>Similar Items</h2>
+        <div class="similar-items">
+            <div class="similar-item">
+                <img src="images/mushroom.png" alt="Hair Pin Set of 3">
+                <p>Hair Pin Set of 3</p>
+                <span>$30.00</span>
+            </div>
+            <div class="similar-item">
+                <img src="images/ceramic_flower_vase_1.png" alt="Hair Pin Set of 3">
+                <p>Hair Pin Set of 3</p>
+                <span>$30.00</span>
+            </div>
+            <div class="similar-item">
+                <img src="images/ceramic_flower_vase_3.png" alt="Hair Pin Set of 3">
+                <p>Hair Pin Set of 3</p>
+                <span>$30.00</span>
+            </div>
+            <div class="similar-item">
+                <img src="images/clock.png" alt="Hair Pin Set of 3">
+                <p>Hair Pin Set of 3</p>
+                <span>$30.00</span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="reviews" class="tab-content">
+        <h2>Customer Reviews</h2>
+        <div class="filter-reviews">
+            <div class="stars">
+                <span>4 out of 5 stars</span>
+                ★★★★☆
+            </div>
+            <div>
+                <button onclick="filterReviews('all')" class="active">All</button>
+                <button onclick="filterReviews(5)">5 stars</button>
+                <button onclick="filterReviews(4)">4 stars</button>
+                <button onclick="filterReviews(3)">3 stars</button>
+                <button onclick="filterReviews(2)">2 stars</button>
+                <button onclick="filterReviews(1)">1 star</button>
+            </div>
+        </div>
+        <div class="review-list">
+            <div class="review-item" data-rating="5">
+                <div class="review-author">Hieu Hien <span class="review-date">10 April, 2024</span></div>
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
+                <div class="review-images">
+                    <img src="images/ceramic_flower_vase_1.png" alt="Review Image 1">
+                    <img src="images/ceramic_flower_vase_2.png" alt="Review Image 2">
+                    <img src="images/ceramic_flower_vase_3.png" alt="Review Image 3">
+                </div>
+            </div>
+            <div class="review-item" data-rating="4">
+                <div class="review-author">Nguyen Van A <span class="review-date">26 April, 2024</span></div>
+                <div class="review-stars">★★★★☆</div>
+                <div class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
+                <div class="review-images">
+                    <img src="images/ceramic_flower_vase_1.png" alt="Review Image 1">
+                    <img src="images/ceramic_flower_vase_2.png" alt="Review Image 2">
+                    <img src="images/ceramic_flower_vase_3.png" alt="Review Image 3">
+                </div>
+            </div>
+            <div class="review-item" data-rating="5">
+                <div class="review-author">Hieu Hien <span class="review-date">10 April, 2024</span></div>
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
+                <div class="review-images">
+                    <img src="images/ceramic_flower_vase_1.png" alt="Review Image 1">
+                    <img src="images/ceramic_flower_vase_2.png" alt="Review Image 2">
+                    <img src="images/ceramic_flower_vase_3.png" alt="Review Image 3">
+                </div>
+            </div>
+        </div>
+        <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2024 All Rights Reserved</p>
     </footer>
@@ -444,7 +695,38 @@
         
             quantityInput.value = newQuantity;
         }
-        </script>
-        
+
+        function showTab(tabName) {
+            var i;
+            var x = document.getElementsByClassName("tab-content");
+            var tabs = document.getElementsByClassName("tab");
+            for (i = 0; i < x.length; i++) {
+                x[i].classList.remove("active");
+            }
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            document.querySelector('.tab[onclick="showTab(\'' + tabName + '\')"]').classList.add("active");
+        }
+
+        function filterReviews(rating) {
+            var reviews = document.querySelectorAll('.review-item');
+            reviews.forEach(function(review) {
+                if (rating === 'all' || review.getAttribute('data-rating') == rating) {
+                    review.style.display = 'block';
+                } else {
+                    review.style.display = 'none';
+                }
+            });
+
+
+            var buttons = document.querySelectorAll('.filter-reviews button');
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+            document.querySelector('.filter-reviews button[onclick="filterReviews(\'' + rating + '\')"]').classList.add('active');
+        }
+    </script>
 </body>
 </html>
