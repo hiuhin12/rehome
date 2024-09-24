@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fraunces&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #f9f9f9;
+            padding-top: 20px;
+        }
+        .container {
+            display: flex;
+            background-color: white;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            flex: 1;
+            border-right: 2px solid #eee;
+            padding: 20px;
+        }
+        .content {
+            flex: 3;
+            padding: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            border-bottom: 1px solid #A9A6A6;
+            cursor: pointer;
+        }
+        .sidebar li:hover, .sidebar li.active {
+            background-color: #DADDB1;
+            font-weight: 600;
+            color: #75634D;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-bottom: 1.5px solid #C2BEBA;
+            background: transparent;
+            outline: none;
+            color: #333;
+        }
+        input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder, input[type="date"]::placeholder {
+            color: #838383;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="date"]:focus {
+            border-bottom-color: #75634D;
+        }
+        .settings-section {
+            margin-bottom: 30px;
+        }
+        .settings-section label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .linked-accounts img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .notifications-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toggle-switch {
+            position: relative;
+            width: 40px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .toggle-switch::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #fff;
+            top: 1px;
+            left: 1px;
+            transition: all 0.3s;
+        }
+        .toggle-switch.active {
+            background-color: #DADDB1;
+        }
+        .toggle-switch.active::before {
+            transform: translateX(20px);
+        }
+        .save-changes {
+            background-color: #DADDB1;
+            color: #75634D;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .save-changes:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li>My Profile</li>
+                <li>My Orders</li>
+                <li>Wishlist</li>
+                <li class="active">Settings</li>
+                <li>Help Center</li>
+                <li>Log Out</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="settings-section">
+                <label>Language</label>
+                <p>Choose the display language of your website</p>
+                <select>
+                    <option value="english">English</option>
+                    <option value="vietnamese">Vietnamese</option>
+                    <option value="spanish">Spanish</option>
+                </select>
+            </div>
+            <div class="settings-section">
+                <label>Linked Accounts</label>
+                <p>Linked to your other accounts</p>
+                <div class="linked-accounts">
+                    <input type="radio" name="linked-accounts">
+                    <img src="images/facebook.png" alt="Facebook">
+                    <input type="radio" name="linked-accounts">
+                    <img src="images/google.png" alt="Google">
+                    <input type="radio" name="linked-accounts">
+                    <img src="images/apple.png" alt="Apple">
+                </div>
+            </div>
+            <div class="settings-section">
+                <label>Notifications</label>
+                <p>To ensure you don't miss our new product, please turn on notifications</p>
+                <div class="notifications-toggle">
+                    <span>Notifications</span>
+                    <div class="toggle-switch" onclick="this.classList.toggle('active')"></div>
+                </div>
+            </div>
+            <button class="save-changes">Save Changes</button>
+        </div>
+    </div>
+</body>
+</html>

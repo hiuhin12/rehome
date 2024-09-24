@@ -1,0 +1,6 @@
+Payment method ID,Card type,Bank,Image
+PC0001,ATM,Vietinbank,bank.png
+PC0002,Visa,Default,visa.png
+PC0003,ATM,Vietcombank,bank.png
+PC0004,Visa,Default,visa.png
+PC0005,MasterCard,Default,mastercard.png

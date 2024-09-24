@@ -1,0 +1,91 @@
+<body>
+    <!-- Header -->
+    <header class="header">
+        <!-- Logo Section -->
+        <div class="header-logo">
+            <img src="assets/images/logo.png" width="50px" alt="Rehome Logo">
+        </div>
+
+        <!-- Navigation Menu -->
+        <ul class="header-menu">
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Products <img src="assets/images/ic_arrow_down.png" width="10px"></a>
+                <div class="dropdown">
+                    <a href="#">Candles & essential oils</a>
+                    <a href="#">Organizer</a>
+                    <a href="#">Textile Fabric</a>
+                    <a href="#">Wall decor</a>
+                    <a href="#">Lighting</a>
+                </div>
+            </li>
+            <li><a href="#">Our Story</a></li>
+        </ul>
+
+        <!-- Search Bar -->
+        <div class="header-search-container">
+            <img src="assets/images/ic_search.png" width="15px" alt="Search Icon">
+            <input type="text" id="search-bar" placeholder="Search for anything">
+        </div>
+
+        <!-- Icons Section -->
+        <div class="header-icons">
+            <img src="assets/images/ic_cart.png" alt="Cart Icon">
+            <img src="assets/images/ic_account.png" alt="Account Icon">
+        </div>
+    </header>
+
+    <!-- Main Content (includes both filter panel and product grid) -->
+    <main class="main-content">
+        <!-- Filter Panel -->
+        <div class="filter-container">
+            <div class="filter-title">Filter by price</div>
+            <div class="filter-group">
+                <div class="filter-group-item" data-filter="price1">$0 - $200</div>
+                <div class="filter-group-item" data-filter="price2">$200 - $500</div>
+                <div class="filter-group-item" data-filter="price3">$500 - $800</div>
+                <div class="filter-group-item" data-filter="price4">$800 - $1000</div>
+                <div class="filter-group-item" data-filter="price5">&gt; $1000</div>
+            </div>
+
+            <div class="filter-title">Filter by feedback</div>
+            <div class="filter-group">
+                <div class="filter-group-item" data-filter="feedback1">From 1 star</div>
+                <div class="filter-group-item" data-filter="feedback2">From 2 stars</div>
+                <div class="filter-group-item" data-filter="feedback3">From 3 stars</div>
+                <div class="filter-group-item" data-filter="feedback4">From 4 stars</div>
+                <div class="filter-group-item" data-filter="feedback5">From 5 stars</div>
+            </div>
+
+            <div class="filter-title">Filter by categories</div>
+            <div class="filter-group">
+                <div class="filter-group-item" data-filter="category1">Lightning</div>
+                <div class="filter-group-item" data-filter="category2">Organizer</div>
+                <div class="filter-group-item" data-filter="category3">Fragrances</div>
+                <div class="filter-group-item" data-filter="category4">Decoration</div>
+                <div class="filter-group-item" data-filter="category5">Best Seller</div>
+                <div class="filter-group-item" data-filter="category6">Discount</div>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-button filter-button-reset" id="reset-filters">Reset</button>
+                <button class="filter-button filter-button-apply">Apply</button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="product-grid">
+            <!-- Dynamic product cards will be inserted here -->
+        </div>
+        
+
+    </main>
+
+    <!-- Pagination Controls -->
+    <div class="pagination">
+        <button id="prev-page">&laquo;</button>
+        <span id="page-numbers"></span>
+        <button id="next-page">&raquo;</button>
+    </div>
+
+</body>

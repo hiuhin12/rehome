@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - My Orders</title>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fraunces&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #f9f9f9;
+            padding-top: 20px;
+        }
+        .container {
+            display: flex;
+            background-color: white;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            flex: 1;
+            border-right: 2px solid #eee;
+            padding: 20px;
+        }
+        .content {
+            flex: 3;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            border-bottom: 1px solid #A9A6A6;
+            cursor: pointer;
+        }
+        .sidebar li:hover, .sidebar li.active {
+            background-color: #DADDB1;
+            font-weight: 600;
+            color: #75634D;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #75634D;
+        }
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: #75634D;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .tab.active {
+            background-color: #DADDB1;
+            color: #333;
+        }
+        .tab-content {
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .order-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .order-item img {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+        .order-details {
+            flex-grow: 1;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li>My Profile</li>
+                <li class="active">My Orders</li>
+                <li>Wishlist</li>
+                <li>Settings</li>
+                <li>Help Center</li>
+                <li>Log Out</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="tabs">
+                <div class="tab" onclick="showTab('onDelivering')">On delivering</div>
+                <div class="tab active" onclick="showTab('orderPlaced')">Order placed</div>
+            </div>
+            <div id="onDelivering" class="tab-content">
+                <div class="order-item">
+                    <img src="images/clock.png" alt="Cute flower shaped wall clock">
+                    <div class="order-details">
+                        <p>Cute flower shaped wall clock</p>
+                        <p style="color:#75634D; font-weight:600">$100</p>
+                        <p>Quantity: 1</p>
+                    </div>
+                </div>
+                <div class="order-item">
+                    <img src="images/mushroom.png" alt="Mushroom Table Lamp">
+                    <div class="order-details">
+                        <p>Mushroom Table Lamp</p>
+                        <p style="color:#75634D; font-weight:600">$159</p>
+                        <p>Color: Red</p>
+                        <p>Quantity: 1</p>
+                    </div>
+                </div>
+                <p>Total: <span style="color:#75634D; font-weight:600; font-size: 18px;">$239</span></p>
+            </div>
+            <div id="orderPlaced" class="tab-content hidden">
+                <div class="order-item">
+                    <img src="images/clock.png" alt="Cute flower shaped wall clock">
+                    <div class="order-details">
+                        <p>Cute flower shaped wall clock</p>
+                        <p style="color:#75634D; font-weight:600">$100</p>
+                        <p>Quantity: 1</p>
+                    </div>
+                </div>
+                <p>Total: <span style="color:#75634D; font-weight:600; font-size: 18px;">$100</span></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showTab(tabId) {
+            var tabs = document.querySelectorAll('.tab');
+            var contents = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                if (tab.textContent === tabId.replace(/([A-Z])/g, ' $1').trim()) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+            contents.forEach(function(content) {
+                if (content.id === tabId) {
+                    content.classList.remove('hidden');
+                } else {
+                    content.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

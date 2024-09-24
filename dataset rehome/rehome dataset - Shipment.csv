@@ -1,0 +1,10 @@
+Shipment ID,Order Number,Customer ID,Shipping fee,Shipment date,Address,City,Province
+S0000001,R0000001,hiennth21411ca@st.uel.edu.vn,25000,20/04/2024,"669 National Highway 1A, Quarter 3",Thu Duc,HCMC
+S0000002,R0000002,giauntn21411ca@st.uel.edu.vn,35000,19/04/2024,"15 Nguyen Tri Phuong Street, Ward 7",Tan An,Long An
+S0000003,R0000003,baovy120913@gmail.com,35000,20/04/2024,"1928 Huynh Tan Phat Street, Quarter 6",Nha Be District,HCMC
+S0000004,R0000004,nghintt21411ca@st.uel.edu.vn,35000,23/04/2024,"123 Duong Thi Cam Van, Ward 5",Ca Mau,Ca Mau
+S0000005,R0000005,hiennth21411ca@st.uel.edu.vn,35000,26/04/2024,"111 Hoa Lu Street, Dong Da Ward",Quy Nhon,Binh Dinh
+S0000006,R0000006,nganntt21411ca@st.uel.edu.vn,35000,14/05/2024,"46 Le Duan Street, Phu Hoa Ward",Hue,Hue
+S0000007,R0000007,giauntn21411ca@st.uel.edu.vn,35000,20/05/2024,"15 Nguyen Tri Phuong Street, Ward 7",Tan An,Long An
+S0000008,R0000008,hiennth21411ca@st.uel.edu.vn,25000,24/05/2024,"669 National Highway 1A, Quarter 3",Thu Duc,HCMC
+S0000009,R0000009,nghintt21411ca@st.uel.edu.vn,25000,24/05/2024,"5 Street No. 7, Linh Xuan Ward",Thu Duc,HCMC
